@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: sidejob-diagnosis-test
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PUBLIC_URL
+        sync: false
+      - key: LINE_CHANNEL_ID
+        sync: false
+      - key: LINE_CHANNEL_SECRET
+        sync: false
+      - key: LINE_REDIRECT_URI
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
