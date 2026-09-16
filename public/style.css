@@ -25,3 +25,13 @@
 .gatePage .homeBtn{margin-top:0}
 .gateShare{position:absolute;right:4px;font-size:28px}
 @media(max-width:420px){.coverTop h1{font-size:38px;margin-top:62px}.coverCharacterArea{min-height:320px}.coverCharacter{width:225px}.coverMessage{right:1%;font-size:12px}.coverBenefits span{width:42px;height:42px}.coverBenefits b{font-size:11px}}
+
+/* High-resolution supplied artwork */
+.coverCharacterArea{min-height:0;height:auto;margin:12px 0 8px;display:flex;justify-content:center;align-items:center}
+.coverCharacter{display:block;width:min(100%,430px);height:auto;max-height:none;object-fit:contain;filter:none}
+.coverMessage{right:3%;top:52%;font-size:13px}
+@media(max-width:420px){.coverCharacterArea{margin:8px 0 6px}.coverCharacter{width:100%}.coverMessage{right:2%;top:52%;font-size:11px}}
+
+/* Result gate uses the user's supplied high-resolution R/I/S/C/E/A artwork. */
+.gateResultImage{box-shadow:none;background:transparent}
+.gateResultImage img{width:100%;height:auto;image-rendering:auto}
