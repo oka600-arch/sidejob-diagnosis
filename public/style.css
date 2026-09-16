@@ -3,3 +3,25 @@
 /* Reference-image based UI: use the supplied visual as the source artwork so the mascot stays natural. */
 .coverReference{width:100%;display:flex;justify-content:center;margin:0 auto 4px;overflow:hidden;border-radius:24px}.coverReference img{display:block;width:100%;height:auto;max-height:calc(100vh - 150px);object-fit:contain;object-position:top center}.startScreen{padding:14px 12px 18px;justify-content:flex-start}.startScreen .startBtn{margin-top:4px}.free{margin-bottom:0}.resultImageWrap{width:100%;border-radius:26px;overflow:hidden;background:#fff}.resultImageWrap img{display:block;width:100%;height:auto}.resultPage{padding:14px 12px 20px}.resultPage .lineCard{margin-top:14px}.resultPage .benefits{margin-top:14px}.resultPage .homeBtn{margin-top:0}.coverScene,.coverNote,.quick,.startScreen h1,.startScreen .subtitle,.startScreen .startMascot{display:none}
 @media(max-width:420px){.coverReference img{max-height:calc(100vh - 145px)}.startScreen{padding:10px 8px 16px}.resultImageWrap{border-radius:22px}}
+
+
+/* Final reference-based cover + LINE gate */
+.startScreen{padding:24px 22px 18px;justify-content:flex-start;background:#fcfbf9}
+.coverTop{position:relative;text-align:center}
+.coverTop .quick{position:absolute;right:0;top:0;background:#f1e5e3;border-radius:22px;padding:10px 16px;font-size:15px;line-height:1.35}
+.coverTop h1{font-size:43px;line-height:1.08;text-align:center;margin:62px 0 7px;letter-spacing:.04em}
+.coverTop .subtitle{font-size:16px;margin:0;color:#4c4c4c;letter-spacing:.08em}
+.coverCharacterArea{position:relative;display:flex;justify-content:center;align-items:center;min-height:365px;margin-top:6px}
+.coverCharacter{width:min(245px,68vw);height:auto;object-fit:contain;filter:drop-shadow(0 8px 3px rgba(150,120,120,.10))}
+.coverMessage{position:absolute;right:5%;top:43%;font-size:14px;line-height:1.5;font-weight:700;transform:rotate(5deg);color:#333}
+.coverBenefits{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 16px}
+.coverBenefits div{text-align:center;color:#333}
+.coverBenefits span{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 6px;border-radius:50%;background:#f1e9e6;font-size:23px}
+.coverBenefits b{font-size:12px;line-height:1.5;font-weight:600}
+.gatePage{padding:14px 12px 20px}
+.gateResultImage{width:100%;border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(60,45,40,.05)}
+.gateResultImage img{display:block;width:100%;height:auto}
+.gatePage .lineCard{margin-top:14px}
+.gatePage .homeBtn{margin-top:0}
+.gateShare{position:absolute;right:4px;font-size:28px}
+@media(max-width:420px){.coverTop h1{font-size:38px;margin-top:62px}.coverCharacterArea{min-height:320px}.coverCharacter{width:225px}.coverMessage{right:1%;font-size:12px}.coverBenefits span{width:42px;height:42px}.coverBenefits b{font-size:11px}}
