@@ -37,18 +37,62 @@ function buildRoadmap(job){
 }
 function buildLearningResources(job){
   const map={
-    'Webデザイン':['Canvaの公式チュートリアル','Figmaの公式Learn','バナー模写・制作練習'],
-    '動画編集':['DaVinci Resolveの公式トレーニング','CapCutの公式ヘルプ','ショート動画編集の練習素材'],
-    'AI画像制作':['利用する生成AIの公式ヘルプ','プロンプト作成の基礎','著作権・商用利用条件の確認'],
-    'SNS運用':['各SNSの公式クリエイター向けガイド','投稿分析・インサイトの見方','競合アカウントの研究'],
-    'Webライター':['SEOの基礎資料','文章構成・校正の練習','実際の記事を使ったリライト練習'],
-    'オンライン秘書':['Google Workspace公式学習','Excel/スプレッドシートの基礎','資料作成テンプレートの練習'],
-    'データ入力':['Excel/スプレッドシート基礎','タイピング練習','データ整理・チェックの練習'],
-    'リサーチ業務':['検索演算子・情報収集の基礎','情報源の信頼性チェック','スプレッドシートでの整理練習'],
-    '営業代行':['営業・ヒアリングの基礎','提案文・営業資料の作成練習','商談ロールプレイ'],
-    'アフィリエイト':['ASPの仕組みを学ぶ','SEO/SNS導線の基礎','アクセス解析の基礎']
+    'Webデザイン':[
+      {title:'Canva Essentials',meta:'Canva公式・約1時間・初心者向け',url:'https://www.canva.com/design-school/courses/canva-essentials/'},
+      {title:'Graphic Design Essentials',meta:'Canva公式・約53分・初心者向け',url:'https://www.canva.com/design-school/courses/graphic-design-essentials/'},
+      {title:'Figma Learn',meta:'Figma公式・UI/デザインの基礎',url:'https://help.figma.com/hc/en-us/categories/360002051613-Learn-design'}
+    ],
+    '動画編集':[
+      {title:'Premiereでのビデオ編集',meta:'Adobe公式・カット/トリミングなどの基礎',url:'https://helpx.adobe.com/jp/premiere/desktop/edit-projects/intro-to-editing/edit-video-in-premiere.html'},
+      {title:'Premiere Pro ことはじめ',meta:'Adobe公式・初心者向けチュートリアル',url:'https://blog.adobe.com/jp/publish/2017/08/22/video-premiere-pro-beginner-tutorials-kotohajime'},
+      {title:'DaVinci Resolve Training',meta:'Blackmagic Design公式・無料トレーニング',url:'https://www.blackmagicdesign.com/products/davinciresolve/training'}
+    ],
+    'AI画像制作':[
+      {title:'Canva AI Essentials',meta:'Canva公式・約1時間・初心者向け',url:'https://www.canva.com/design-school/courses/ai-essentials/'},
+      {title:'Canva Design School',meta:'Canva公式・AI/デザインの学習コース',url:'https://www.canva.com/design-school/courses/'},
+      {title:'OpenAI Academy',meta:'OpenAI公式・AI活用の学習リソース',url:'https://academy.openai.com/'}
+    ],
+    'SNS運用':[
+      {title:'Instagram Creators',meta:'Instagram公式・クリエイター向け情報',url:'https://creators.instagram.com/'},
+      {title:'TikTok Academy',meta:'TikTok公式・マーケティング学習',url:'https://ads.tiktok.com/business/creativecenter/inspiration/topads/pc/en'},
+      {title:'Canva Social Media Mastery',meta:'Canva Design School・SNS制作',url:'https://www.canva.com/design-school/courses/'}
+    ],
+    'Webライター':[
+      {title:'Google SEO Starter Guide',meta:'Google公式・SEOの基本',url:'https://developers.google.com/search/docs/fundamentals/seo-starter-guide'},
+      {title:'Google Search Essentials',meta:'Google公式・検索に掲載されるための基本',url:'https://developers.google.com/search/docs/essentials'},
+      {title:'Google Search Central',meta:'Google公式・SEO/検索の学習リソース',url:'https://developers.google.com/search/help'}
+    ],
+    'オンライン秘書':[
+      {title:'Google Workspace Learning Center',meta:'Google公式・Gmail/Docs/Sheetsなど',url:'https://support.google.com/a/users/answer/9282720'},
+      {title:'Google スプレッドシート ヘルプ',meta:'Google公式・表計算の基本',url:'https://support.google.com/docs/topic/9054603'},
+      {title:'Microsoft 365 Training',meta:'Microsoft公式・Officeの学習',url:'https://support.microsoft.com/training'}
+    ],
+    'データ入力':[
+      {title:'Google スプレッドシート ヘルプ',meta:'Google公式・表計算の基本',url:'https://support.google.com/docs/topic/9054603'},
+      {title:'Microsoft Excel Training',meta:'Microsoft公式・Excelの学習',url:'https://support.microsoft.com/training'},
+      {title:'Google Workspace Learning Center',meta:'Google公式・仕事で使うツールの基礎',url:'https://support.google.com/a/users/answer/9282720'}
+    ],
+    'リサーチ業務':[
+      {title:'Google検索の基本',meta:'Google Search Central・検索/情報収集の入口',url:'https://www.google.com/search/howsearchworks/'},
+      {title:'Google Search Central',meta:'Google公式・検索に関する基礎知識',url:'https://developers.google.com/search/help'},
+      {title:'Google スプレッドシート ヘルプ',meta:'Google公式・調査結果の整理に活用',url:'https://support.google.com/docs/topic/9054603'}
+    ],
+    '営業代行':[
+      {title:'HubSpot Academy',meta:'HubSpot公式・営業/マーケティングの無料講座',url:'https://academy.hubspot.com/ja'},
+      {title:'Google Skillshop',meta:'Google公式・広告/マーケティングを学ぶ',url:'https://skillshop.withgoogle.com/intl/ja/'},
+      {title:'Google 広告トレーニング',meta:'Google公式・無料オンライン学習',url:'https://skillshop.withgoogle.com/intl/ja_ALL/googleads/'}
+    ],
+    'アフィリエイト':[
+      {title:'Google SEO Starter Guide',meta:'Google公式・SEOの基本',url:'https://developers.google.com/search/docs/fundamentals/seo-starter-guide'},
+      {title:'Google Search Essentials',meta:'Google公式・検索の基本とポリシー',url:'https://developers.google.com/search/docs/essentials'},
+      {title:'Google Analytics Academy / Skillshop',meta:'Google公式・アクセス解析を学ぶ',url:'https://skillshop.withgoogle.com/intl/ja/'}
+    ]
   };
-  return map[job]||['基礎教材','公式ドキュメント','実践課題'];
+  return map[job]||[
+    {title:'Google Skillshop',meta:'Google公式・無料オンライン学習',url:'https://skillshop.withgoogle.com/intl/ja/'},
+    {title:'Canva Design School',meta:'Canva公式・デザイン学習',url:'https://www.canva.com/design-school/courses/'},
+    {title:'Google Search Central',meta:'Google公式・Webの基礎',url:'https://developers.google.com/search/help'}
+  ];
 }
 function makeDetailContent(jobs){
   const primary=jobs&&jobs[0];
