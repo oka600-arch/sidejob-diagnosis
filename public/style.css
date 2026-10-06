@@ -298,3 +298,26 @@
   .mainBuddyOnHands{left:52%;top:72%;width:53%;}
   .subBuddyOnShoulder{right:-2%;top:24%;width:30%;}
 }
+
+/* v13: requested final character scale/placement.
+   Human fills the available right-side area; main buddy spans roughly neck-to-hands
+   and is centered directly on the open palms; subtype buddy is half that scale and
+   sits on the shoulder. */
+.dynamicHumanStage{width:100%;}
+.dynamicHuman{width:100%;height:100%;left:50%;object-fit:contain;object-position:center top;}
+.mainBuddyOnHands{left:50%;top:70%;width:80%;transform:translate(-50%,-50%);z-index:5;}
+.subBuddyOnShoulder{right:0%;top:25%;width:40%;transform:translate(0,-50%);z-index:6;}
+
+@media (max-width:700px){
+  .dynamicResultColumns{grid-template-columns:42% 58%;}
+  .dynamicHumanStage{height:450px;width:100%;margin-top:-2px;}
+  .dynamicHuman{width:100%;height:100%;left:50%;object-fit:contain;object-position:center top;}
+  .mainBuddyOnHands{left:50%;top:70%;width:80%;transform:translate(-50%,-50%);}
+  .subBuddyOnShoulder{right:0%;top:25%;width:40%;transform:translate(0,-50%);}
+}
+@media (max-width:420px){
+  .dynamicHumanStage{height:450px;width:100%;}
+  .dynamicHuman{width:100%;left:50%;}
+  .mainBuddyOnHands{left:50%;top:70%;width:80%;}
+  .subBuddyOnShoulder{right:0%;top:25%;width:40%;}
+}
