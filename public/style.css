@@ -94,3 +94,26 @@
 /* Questions intentionally show no RIASEC characters or type-specific visual clues. */
 .quizCardTextOnly .options{margin-top:18px}
 .resultLabels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 12px}.resultLabels>div{background:#fff;border:1px solid #eee7dc;border-radius:18px;padding:12px;box-shadow:0 3px 10px rgba(70,55,40,.04)}.resultLabels small{display:block;font-size:9px;color:#8a8f98;font-weight:800;margin-bottom:3px}.resultLabels b{display:block;font-size:14px;color:#242a31;line-height:1.35}@media(max-width:420px){.resultLabels b{font-size:12px}}
+
+/* Exact supplied result-screen treatment */
+.referenceStyleResult{background:#fcfbf7;padding:10px 8px 24px}
+.referenceStyleResult .resultTop{font-size:20px;color:#3b2b22;margin:2px 4px 8px}
+.referenceStyleResult .resultTop button{color:#3b2b22}
+.referenceStyleResult .polishedHero{margin:0}
+.referenceStyleResult .resultImageWrap{border-radius:0;background:transparent}
+.referenceStyleResult .resultCharacterV2>img{width:100%;height:auto;border-radius:0;display:block}
+.referenceStyleResult .exactReferenceResult{box-shadow:none}
+.referenceResultLabels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 2px}
+.referenceResultLabels>div{background:#fff;border:1px solid #eee5da;border-radius:16px;padding:10px 11px}
+.referenceResultLabels small{display:block;color:#8b8176;font-size:9px;font-weight:800;margin-bottom:3px}
+.referenceResultLabels b{display:block;color:#302820;font-size:13px;line-height:1.35}
+.dynamicResultHero{position:relative;overflow:hidden;border-radius:0;background:#fffdf8;padding:18px 16px 14px;min-height:640px}
+.dynamicResultKicker{font-size:14px;font-weight:700;margin-bottom:5px}
+.dynamicResultMain{display:flex;align-items:center;gap:10px}
+.dynamicTypeBadge{width:58px;height:58px;border-radius:50%;background:var(--main);color:#fff;display:grid;place-items:center;font-size:32px;font-weight:900}
+.dynamicTypeName{font-size:22px;font-weight:900}.dynamicTypeEn{font-size:13px;color:#6f665f;margin-top:1px}
+.dynamicAction{font-size:38px;font-weight:900;line-height:1.05;margin-top:10px;color:#33271f}.dynamicPhrase{display:inline-block;border:2px solid var(--main);border-radius:28px;padding:9px 13px;margin-top:9px;font-weight:800;color:#493a30;background:#fff}
+.dynamicCharacter{display:flex;justify-content:center;margin:5px 0}.dynamicCharacter img{width:48%;max-width:250px;height:auto;object-fit:contain;border-radius:18px}
+.dynamicJobs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:6px}.dynamicJobsTitle{grid-column:1/-1;font-weight:900;font-size:17px;margin:4px 0}.dynamicJob{background:#fff;border:1px solid #eee5da;border-radius:14px;padding:10px;font-weight:800;font-size:12px}
+.dynamicSub{margin-top:10px;background:var(--soft);border-radius:18px;padding:12px}.dynamicSubKicker{font-size:11px;font-weight:800;margin-bottom:5px}.dynamicSubBody{display:flex;align-items:center;gap:10px}.dynamicSubBadge{width:46px;height:46px;border-radius:50%;background:var(--main);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900}.dynamicSubBody b{display:block;font-size:15px}.dynamicSubBody span{display:block;font-size:11px;color:#5c625d;margin-top:2px}
+@media(max-width:420px){.referenceStyleResult{padding:8px 5px 20px}.referenceResultLabels b{font-size:12px}.dynamicResultHero{padding:15px 12px}.dynamicAction{font-size:31px}.dynamicCharacter img{width:58%}.dynamicJobs{gap:6px}.dynamicJob{font-size:11px;padding:9px}}
