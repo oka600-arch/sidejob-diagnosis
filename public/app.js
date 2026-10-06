@@ -33,8 +33,8 @@ function resultCharacter(type,sub){
       <div class="dynamicPhrase">${escapeHtml(main.phrase)}</div>
       <div class="dynamicHumanStage">
         <img class="dynamicHuman" src="/assets/dynamic/human.webp" alt="診断キャラクター">
-        <div class="mainBuddyOnHands"><span class="buddyLabel">メイン</span><img class="dynamicMascot mainMascot" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
-        <div class="subBuddyOnShoulder"><span class="buddyLabel subLabel">サブ ${sub}</span><img class="dynamicMascot subMascot" src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div>
+        <div class="mainBuddyOnHands"><img class="dynamicMascot mainMascot" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
+        <div class="subBuddyOnShoulder"><img class="dynamicMascot subMascot" src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div>
       </div>
       <div class="dynamicDescription">${escapeHtml(main.desc||'あなたの興味や行動傾向を活かしやすいタイプです。')}</div>
       <div class="dynamicJobs"><div class="dynamicJobsTitle">こんな副業・仕事が向いています</div>${main.jobs.map(j=>`<div class="dynamicJob">${escapeHtml(j)}</div>`).join('')}</div>
