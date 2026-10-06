@@ -28,18 +28,42 @@ function resultCharacter(type,sub){
   return `<div class="resultImageWrap resultCharacterV2 dynamicReferenceResult">
     <div class="dynamicResultHero" style="--main:${main.color};--soft:${main.soft}">
       <div class="dynamicResultKicker">あなたの副業タイプは…</div>
-      <div class="dynamicResultMain"><div class="dynamicTypeBadge">${type}</div><div><div class="dynamicTypeName">${escapeHtml(main.name)}</div><div class="dynamicTypeEn">(${escapeHtml(main.en)})</div></div></div>
-      <div class="dynamicAction">${escapeHtml(main.action)}</div>
-      <div class="dynamicPhrase">${escapeHtml(main.phrase)}</div>
-      <div class="dynamicHumanStage">
-        <img class="dynamicHuman" src="/assets/dynamic/human.webp" alt="診断キャラクター">
-        <div class="mainBuddyOnHands"><img class="dynamicMascot mainMascot" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
-        <div class="subBuddyOnShoulder"><img class="dynamicMascot subMascot" src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div>
+      <div class="dynamicResultColumns">
+        <div class="dynamicResultCopy">
+          <div class="dynamicResultMain"><div class="dynamicTypeBadge">${type}</div><div><div class="dynamicTypeName">${escapeHtml(main.name)}</div><div class="dynamicTypeEn">(${escapeHtml(main.en)})</div></div></div>
+          <div class="dynamicAction">${escapeHtml(main.action)}</div>
+          <div class="dynamicPhrase">${escapeHtml(main.phrase)}</div>
+          <div class="dynamicDescription">${escapeHtml(main.desc||'あなたの興味や行動傾向を活かしやすいタイプです。')}</div>
+        </div>
+        <div class="dynamicHumanStage">
+          <img class="dynamicHuman" src="/assets/dynamic/human.webp" alt="診断キャラクター">
+          <div class="mainBuddyOnHands"><img class="dynamicMascot mainMascot" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
+          <div class="subBuddyOnShoulder"><img class="dynamicMascot subMascot" src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div>
+        </div>
       </div>
-      <div class="dynamicDescription">${escapeHtml(main.desc||'あなたの興味や行動傾向を活かしやすいタイプです。')}</div>
-      <div class="dynamicJobs"><div class="dynamicJobsTitle">こんな副業・仕事が向いています</div>${main.jobs.map(j=>`<div class="dynamicJob">${escapeHtml(j)}</div>`).join('')}</div>
+      <div class="dynamicJobs"><div class="dynamicJobsTitle">こんな副業・仕事が向いています</div>${main.jobs.map(j=>`<div class="dynamicJob"><b>${escapeHtml(j)}</b><span>${escapeHtml(jobHint(j))}</span></div>`).join('')}</div>
+      <div class="dynamicSubtype" style="--sub:${sec.color};--subsoft:${sec.soft}">
+        <div class="dynamicSubtypeTitle">あなたのサブタイプは…</div>
+        <div class="dynamicSubtypeBody">
+          <div class="dynamicSubtypeBadge">${sub}</div>
+          <div class="dynamicSubtypeName"><b>${escapeHtml(sec.name)}</b><small>(${escapeHtml(sec.en)})</small></div>
+          <div class="dynamicSubtypeDivider"></div>
+          <div class="dynamicSubtypeText"><b>${escapeHtml(sec.phrase)}</b><span>${escapeHtml(sec.desc||'')}</span></div>
+        </div>
+      </div>
     </div>
   </div>`;
+}
+function jobHint(job){
+  const hints={
+    'Webサイト制作':'デザイン・コードで形にする','動画編集':'編集スキルでコンテンツをつくる','写真・映像撮影':'撮って伝えるクリエイティブな仕事','業務効率化・仕組み作り':'ツールや仕組みで作業をスムーズにする',
+    'リサーチ・調査':'情報を集めて深く調べる','データ分析':'数字から傾向を読み解く','Webライティング':'調べたことを文章で伝える','資料作成':'情報を整理してわかりやすくする',
+    'イラスト制作':'感性を使って表現する','デザイン制作':'見た目とアイデアを形にする','SNSコンテンツ':'世界観をコンテンツにする','ライティング':'言葉で魅力を伝える',
+    'SNS運用サポート':'相手に寄り添って運用を支える','オンライン講師':'知識をわかりやすく伝える','カスタマーサポート':'困りごとを解決する','コミュニティ運営':'人をつないで場をつくる',
+    'アフィリエイト':'発信して人に届ける','SNS発信':'発信で人を動かす','営業・企画':'人を巻き込み進める','Webマーケティング':'戦略を考えて成果につなげる',
+    '事務サポート':'正確にコツコツ支える','スケジュール管理':'予定を整理して進める','データ入力':'正確に積み上げる','資料作成':'情報を整理してまとめる'
+  };
+  return hints[job]||'あなたの強みを活かしやすい仕事';
 }
 function renderResult(){
   const r=result,t=typeInfo[r.main]||typeInfo.A;
