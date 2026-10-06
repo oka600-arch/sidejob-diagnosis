@@ -299,25 +299,47 @@
   .subBuddyOnShoulder{right:-2%;top:24%;width:30%;}
 }
 
-/* v13: requested final character scale/placement.
-   Human fills the available right-side area; main buddy spans roughly neck-to-hands
-   and is centered directly on the open palms; subtype buddy is half that scale and
-   sits on the shoulder. */
-.dynamicHumanStage{width:100%;}
-.dynamicHuman{width:100%;height:100%;left:50%;object-fit:contain;object-position:center top;}
-.mainBuddyOnHands{left:50%;top:70%;width:80%;transform:translate(-50%,-50%);z-index:5;}
-.subBuddyOnShoulder{right:0%;top:25%;width:40%;transform:translate(0,-50%);z-index:6;}
+/* v14: human is intentionally oversized to match the supplied reference.
+   The human should occupy the full right-side whitespace, with the eyes around
+   the type-title line and the lower body extending into the jobs heading area.
+   The main mascot remains anchored to the open hands; the subtype mascot is
+   about half its size and sits on the shoulder. */
+.dynamicHumanStage{width:100%;overflow:visible;}
+.dynamicHuman{
+  width:150%;
+  height:auto;
+  left:58%;
+  top:-56px;
+  inset:auto;
+  transform:translateX(-50%);
+  object-fit:contain;
+  object-position:center top;
+}
+.mainBuddyOnHands{
+  left:52%;
+  top:92%;
+  width:80%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+}
+.subBuddyOnShoulder{
+  right:-2%;
+  top:25%;
+  width:40%;
+  transform:translate(0,-50%);
+  z-index:6;
+}
 
 @media (max-width:700px){
   .dynamicResultColumns{grid-template-columns:42% 58%;}
-  .dynamicHumanStage{height:450px;width:100%;margin-top:-2px;}
-  .dynamicHuman{width:100%;height:100%;left:50%;object-fit:contain;object-position:center top;}
-  .mainBuddyOnHands{left:50%;top:70%;width:80%;transform:translate(-50%,-50%);}
-  .subBuddyOnShoulder{right:0%;top:25%;width:40%;transform:translate(0,-50%);}
+  .dynamicHumanStage{height:450px;width:100%;margin-top:-2px;overflow:visible;}
+  .dynamicHuman{width:150%;height:auto;left:58%;top:-56px;transform:translateX(-50%);object-fit:contain;object-position:center top;}
+  .mainBuddyOnHands{left:52%;top:92%;width:80%;transform:translate(-50%,-50%);}
+  .subBuddyOnShoulder{right:-2%;top:25%;width:40%;transform:translate(0,-50%);}
 }
 @media (max-width:420px){
-  .dynamicHumanStage{height:450px;width:100%;}
-  .dynamicHuman{width:100%;left:50%;}
-  .mainBuddyOnHands{left:50%;top:70%;width:80%;}
-  .subBuddyOnShoulder{right:0%;top:25%;width:40%;}
+  .dynamicHumanStage{height:450px;width:100%;overflow:visible;}
+  .dynamicHuman{width:150%;height:auto;left:58%;top:-56px;}
+  .mainBuddyOnHands{left:52%;top:92%;width:80%;}
+  .subBuddyOnShoulder{right:-2%;top:25%;width:40%;}
 }
