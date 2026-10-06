@@ -13,7 +13,7 @@ async function api(url,opt={}){const r=await fetch(url,{headers:{'Content-Type':
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function shell(x){app.innerHTML=`<div class="wrap">${x}</div>`}
 function start(){const params=new URLSearchParams(location.search);if(params.get('diagnosis_id')&&params.get('line')==='verified'){did=params.get('diagnosis_id');return loadResult()};renderStart()}
-function renderStart(){shell(`<section class="startScreen"><div class="coverTop"><div class="quick">＼ かんたん<br>20問で診断 ／</div><h1>副業タイプ<br>診断</h1><p class="subtitle">Holland Career Test</p></div><div class="coverCharacterArea"><img class="coverCharacter" src="/assets/cover_character.png" alt="副業タイプ診断キャラクター"><p class="coverMessage">好きなことで<br>はたらこう。</p></div><div class="coverBenefits"><div><span>♧</span><b>自分の強み<br>がわかる</b></div><div><span>▣</span><b>おすすめの<br>副業がわかる</b></div><div><span>♡</span><b>これからの<br>働き方のヒントに</b></div></div><button class="startBtn" id="start">さっそく診断をはじめる <span>→</span></button><p class="free">＼ 所要時間 約3分・無料 ／</p></section>`);document.getElementById('start').onclick=begin}
+function renderStart(){shell(`<section class="startScreen"><div class="coverTop"><div class="quick">\＼ かんたん<br>20問で診断 ／</div><h1>副業タイプ<br>診断</h1><p class="subtitle">Holland Career Test</p></div><div class="coverCharacterArea"><img class="coverCharacter" src="/assets/cover_character.png" alt="副業タイプ診断キャラクター"></div><div class="coverBenefits"><div><span>♧</span><b>自分の強み<br>がわかる</b></div><div><span>▣</span><b>おすすめの<br>副業がわかる</b></div><div><span>♡</span><b>これからの<br>働き方のヒントに</b></div></div><button class="startBtn" id="start">さっそく診断をはじめる <span>→</span></button><p class="free">＼ 所要時間 約3分・無料 ／</p></section>`);document.getElementById('start').onclick=begin}
 async function begin(){try{const d=await api('/api/diagnosis/start',{method:'POST',body:'{}'});did=d.diagnosis_id;qs=(await api('/api/questions')).questions;answers={};idx=0;localStorage.removeItem('sidejob_answers');track('diagnosis_start');renderQ()}catch(e){showErr(e)}}
 function renderQ(){const q=qs[idx],pct=Math.round((idx/qs.length)*100);const opts=[...q.options].sort(()=>Math.random()-.5);shell(`<div class="quizHead"><button class="circleBack" id="backTop">‹</button><div class="qcount">質問 ${idx+1} / ${qs.length}</div><div class="shareGhost"></div></div><div class="progress"><span style="width:${Math.max(4,pct)}%"></span></div><section class="quizCard quizCardTextOnly"><div class="question">${escapeHtml(q.text)}</div><div class="options">${opts.map(o=>`<button class="opt" data-a="${o[0]}">${escapeHtml(o[1])}</button>`).join('')}</div></section>`);document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(q,b.dataset.a));document.getElementById('backTop').onclick=()=>{if(idx>0){idx--;renderQ()}}}
 async function answer(q,a){answers[q.id]=a;track('question_answer',{question_id:q.id});localStorage.setItem('sidejob_answers',JSON.stringify(answers));try{await api('/api/diagnosis/answer',{method:'POST',body:JSON.stringify({diagnosis_id:did,question_id:q.id,answer:a})});if(idx<qs.length-1){idx++;renderQ()}else{await complete()}}catch(e){showErr(e)}}
@@ -23,10 +23,6 @@ async function loadResult(){try{const d=await api('/api/result?diagnosis_id='+en
 function resultCharacter(type,sub){
   const main=typeInfo[type]||typeInfo.A;
   const sec=typeInfo[sub]||typeInfo.I;
-  // R×I is the exact supplied reference artwork. Keep it untouched.
-  if(type==='R' && sub==='I'){
-    return `<div class="resultImageWrap resultCharacterV2 exactReferenceResult"><img src="/assets/result_R.png" alt="現実・実務タイプ｜研究・探究タイプの診断結果"></div>`;
-  }
   const mascot=`/assets/dynamic/${type}.webp`;
   const subMascot=`/assets/dynamic/${sub}.webp`;
   return `<div class="resultImageWrap resultCharacterV2 dynamicReferenceResult">
@@ -35,10 +31,13 @@ function resultCharacter(type,sub){
       <div class="dynamicResultMain"><div class="dynamicTypeBadge">${type}</div><div><div class="dynamicTypeName">${escapeHtml(main.name)}</div><div class="dynamicTypeEn">(${escapeHtml(main.en)})</div></div></div>
       <div class="dynamicAction">${escapeHtml(main.action)}</div>
       <div class="dynamicPhrase">${escapeHtml(main.phrase)}</div>
-      <div class="dynamicHumanStage"><img class="dynamicHuman" src="/assets/dynamic/human.webp" alt="診断キャラクター"><img class="dynamicMascot dynamicMascot-${type}" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
+      <div class="dynamicHumanStage">
+        <img class="dynamicHuman" src="/assets/dynamic/human.webp" alt="診断キャラクター">
+        <div class="mainBuddyOnHands"><span class="buddyLabel">メイン</span><img class="dynamicMascot mainMascot" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
+        <div class="subBuddyOnShoulder"><span class="buddyLabel subLabel">サブ ${sub}</span><img class="dynamicMascot subMascot" src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div>
+      </div>
       <div class="dynamicDescription">${escapeHtml(main.desc||'あなたの興味や行動傾向を活かしやすいタイプです。')}</div>
       <div class="dynamicJobs"><div class="dynamicJobsTitle">こんな副業・仕事が向いています</div>${main.jobs.map(j=>`<div class="dynamicJob">${escapeHtml(j)}</div>`).join('')}</div>
-      <div class="dynamicSub"><div class="dynamicSubKicker">あなたのサブタイプは…</div><div class="dynamicSubBody"><div class="dynamicSubMascot"><img src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div><span class="dynamicSubBadge" style="--main:${sec.color}">${sub}</span><div><b>${escapeHtml(sec.name)}</b><span>${escapeHtml(sec.phrase)}</span><small>${escapeHtml(sec.desc||'')}</small></div></div></div>
     </div>
   </div>`;
 }
