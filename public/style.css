@@ -93,3 +93,4 @@
 
 /* Questions intentionally show no RIASEC characters or type-specific visual clues. */
 .quizCardTextOnly .options{margin-top:18px}
+.resultLabels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 12px}.resultLabels>div{background:#fff;border:1px solid #eee7dc;border-radius:18px;padding:12px;box-shadow:0 3px 10px rgba(70,55,40,.04)}.resultLabels small{display:block;font-size:9px;color:#8a8f98;font-weight:800;margin-bottom:3px}.resultLabels b{display:block;font-size:14px;color:#242a31;line-height:1.35}@media(max-width:420px){.resultLabels b{font-size:12px}}
