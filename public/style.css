@@ -52,20 +52,19 @@
 .top5Title h2{font-size:22px;line-height:1.2;margin:0;font-weight:900}
 .crown{font-size:31px;color:#e8ad25;line-height:1}
 .top5List{display:grid;gap:7px}
-.jobCard{display:grid;grid-template-columns:42px 42px minmax(0,1fr) 18px;align-items:center;gap:7px;background:#fff;border-radius:18px;padding:9px 9px 9px 8px;box-shadow:0 2px 8px rgba(85,65,35,.05);min-height:72px}
+.jobCard{display:grid;grid-template-columns:42px minmax(0,1fr) 18px;align-items:center;gap:7px;background:#fff;border-radius:18px;padding:9px 9px 9px 8px;box-shadow:0 2px 8px rgba(85,65,35,.05);min-height:72px}
 .jobRank{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#f1c044;color:#fff;font-size:17px;font-weight:900;margin:auto}
 .jobCard:nth-child(2) .jobRank{background:#aeb9c5}.jobCard:nth-child(3) .jobRank{background:#e3a66d}.jobCard:nth-child(4) .jobRank{background:#b9cde0}.jobCard:nth-child(5) .jobRank{background:#eab8c6}
-.jobIcon{font-size:27px;text-align:center;line-height:1;color:#2d3945}
 .jobBody{min-width:0}.jobName{font-size:16px;font-weight:900;line-height:1.25;color:#202833}.jobDesc{font-size:11px;line-height:1.45;color:#667085;margin-top:2px}.jobMeta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}.jobMeta span{font-size:9px;color:#667085;background:#f5f6f7;border-radius:9px;padding:2px 6px}.jobArrow{font-size:25px;color:#7b8794;text-align:center}
 .polishedBenefits{background:#fff;border:1px solid #eee7dc;border-radius:22px;margin:12px 0;padding:0;overflow:hidden;box-shadow:0 3px 12px rgba(70,55,40,.04)}
 .polishedBenefits div{border-right:1px solid #eee7dc;padding:12px 6px}.polishedBenefits div:last-child{border-right:0}.polishedBenefits .benefitIcon{display:block;font-size:25px;line-height:1.1;margin-bottom:5px;color:#26313c}.polishedBenefits div>span:last-child{font-size:11px;line-height:1.4;color:#52606d}
 .polishedHome{background:#8da1b2;border-radius:26px;font-weight:800;box-shadow:none;font-size:16px}
-@media(max-width:420px){.polishedResult{padding:10px 7px 18px}.polishedResult .resultTop{font-size:20px}.friendStatus{padding:12px 11px}.friendStatus b{font-size:14px}.friendStatus div span{font-size:11px}.statusCheck{width:38px;height:38px}.top5Panel{padding:13px 7px 9px}.top5Title h2{font-size:19px}.crown{font-size:27px}.jobCard{grid-template-columns:35px 33px minmax(0,1fr) 14px;gap:5px;padding:8px 6px;min-height:68px}.jobRank{width:31px;height:31px;font-size:15px}.jobIcon{font-size:22px}.jobName{font-size:14px}.jobDesc{font-size:10px}.jobMeta span{font-size:8px}.jobArrow{font-size:22px}}
+@media(max-width:420px){.polishedResult{padding:10px 7px 18px}.polishedResult .resultTop{font-size:20px}.friendStatus{padding:12px 11px}.friendStatus b{font-size:14px}.friendStatus div span{font-size:11px}.statusCheck{width:38px;height:38px}.top5Panel{padding:13px 7px 9px}.top5Title h2{font-size:19px}.crown{font-size:27px}.jobCard{grid-template-columns:35px minmax(0,1fr) 14px;gap:5px;padding:8px 6px;min-height:68px}.jobRank{width:31px;height:31px;font-size:15px}.jobName{font-size:14px}.jobDesc{font-size:10px}.jobMeta span{font-size:8px}.jobArrow{font-size:22px}}
 
 .detailGrid{display:grid;gap:12px;margin:12px 0}.detailPanel{background:#fff;border:1px solid #eee7dc;border-radius:22px;padding:16px 14px;box-shadow:0 3px 12px rgba(70,55,40,.04)}.detailHeading{display:flex;align-items:center;gap:10px}.detailHeading>span{width:42px;height:42px;border-radius:14px;background:#f8f2e7;display:grid;place-items:center;font-size:23px}.detailHeading small{font-size:9px;letter-spacing:.14em;color:#9a8c78;font-weight:900}.detailHeading h3{font-size:18px;margin:2px 0 0;color:#27313b}.detailLead{font-size:12px;line-height:1.6;color:#667085;margin:10px 2px 9px}.detailPanel ol,.detailPanel ul{padding:0;margin:0;list-style:none}.roadmapPanel li{display:grid;grid-template-columns:58px 1fr;gap:8px;align-items:center;padding:9px 0;border-top:1px dashed #e7e0d6;font-size:12px;line-height:1.45}.roadmapPanel li:first-child{border-top:0}.roadmapPanel li b{font-size:10px;color:#a27b2e;background:#fff4d2;border-radius:10px;padding:5px 6px;text-align:center}.roadmapPanel li span{color:#3f4b56;font-weight:650}.learningPanel li{display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-top:1px dashed #e7e0d6;font-size:12px;line-height:1.5;color:#3f4b56}.learningPanel li:first-child{border-top:0}.resourceDot{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e8f7ee;color:#19a35b;font-size:12px;font-weight:900}.polishedResult .polishedBenefits{margin-top:2px}
 @media(max-width:420px){.detailPanel{padding:14px 12px}.detailHeading h3{font-size:16px}.detailLead,.roadmapPanel li,.learningPanel li{font-size:11px}.roadmapPanel li{grid-template-columns:55px 1fr}}
 
-.resourceItem{display:flex;gap:10px;align-items:flex-start}.resourceItem a{display:flex;flex-direction:column;gap:3px;color:inherit;text-decoration:none;flex:1}.resourceItem a b{font-size:14px}.resourceItem a small{font-size:11px;opacity:.7;line-height:1.4}.resourceItem a:hover{text-decoration:underline}.resourceDot{flex:0 0 auto}
+.resourceItem{display:flex;gap:0;align-items:flex-start}.resourceItem a{display:flex;flex-direction:column;gap:3px;color:inherit;text-decoration:none;flex:1}.resourceItem a b{font-size:14px}.resourceItem a small{font-size:11px;opacity:.7;line-height:1.4}.resourceItem a:hover{text-decoration:underline}.resourceDot{display:none}
 
 
 /* v2: main human + subtype buddy on shoulder */
@@ -82,3 +81,15 @@
 .typeSummary small{display:block;font-size:9px;line-height:1.35;color:#697381;margin-top:4px}
 .typeSub{display:flex!important;align-items:center;gap:8px}.typeSub .subBadge{width:38px;height:38px;border-radius:12px;background:#f7f0e4;display:grid;place-items:center;font-size:23px;flex:0 0 auto;margin:0}
 @media(max-width:420px){.subtypeBuddy{width:66px;min-height:66px;border-radius:20px;right:7px;top:8px}.subtypeBuddy .buddySymbol{font-size:26px}.subtypeBuddy small{font-size:7px}.typeSummary b{font-size:13px}.typeSummary small{font-size:8px}}
+
+/* Character/result artwork update: supplied R result artwork is authoritative. */
+.resultCharacterV2.exactReferenceResult{background:transparent;box-shadow:none;border-radius:0}
+.resultCharacterV2.exactReferenceResult>img{border-radius:0;box-shadow:none}
+.subtypeCard{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:11px 12px;border-radius:18px;background:#edf3e8;border:1px solid #dce8d8;color:#334638}
+.subtypeCard .subLetter{width:40px;height:40px;flex:0 0 40px;border-radius:50%;display:grid;place-items:center;background:var(--buddy,#477D67);color:#fff;font-size:21px;font-weight:900}
+.subtypeCard div{min-width:0}.subtypeCard small{display:block;font-size:9px;font-weight:800;color:#6d7a70}.subtypeCard b{display:block;font-size:14px;line-height:1.25;margin-top:2px}.subtypeCard span:not(.subLetter){display:block;font-size:10px;line-height:1.35;margin-top:2px;color:#647166}
+.subtype-R{--buddy:#C9553D}.subtype-I{--buddy:#477D67}.subtype-A{--buddy:#8A70A6}.subtype-S{--buddy:#6E9B7D}.subtype-E{--buddy:#E47B49}.subtype-C{--buddy:#C99B3D}
+.coverCharacterArea .coverCharacter{width:min(100%,520px)}
+
+/* Questions intentionally show no RIASEC characters or type-specific visual clues. */
+.quizCardTextOnly .options{margin-top:18px}
