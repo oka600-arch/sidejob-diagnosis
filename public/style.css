@@ -263,3 +263,38 @@
   .mainBuddyOnHands{left:51%;top:62%;width:48%}
   .subBuddyOnShoulder{right:-1%;top:25%;width:27%}
 }
+
+/* v12: final requested balance — large person, main mascot clearly seated on open palms, secondary mascot clearly on shoulder. */
+@media (max-width:700px){
+  .dynamicResultColumns{grid-template-columns:42% 58%;align-items:start;}
+  .dynamicResultCopy{padding-right:0;}
+  .dynamicTypeName{font-size:18px;line-height:1.2;}
+  .dynamicTypeEn{font-size:10px;}
+  .dynamicAction{font-size:36px;line-height:1.02;margin-top:10px;}
+  .dynamicPhrase{font-size:12.5px;line-height:1.35;padding:7px 9px;margin-top:9px;}
+  .dynamicDescription{font-size:12px;line-height:1.62;margin:11px 4px 0 1px;}
+  .dynamicHumanStage{height:430px;margin-top:-4px;overflow:visible;}
+  .dynamicHuman{width:138%;height:100%;left:53%;object-fit:contain;object-position:center top;}
+  /* Human hands are around 70% down the source image, so place the main mascot center there. */
+  .mainBuddyOnHands{left:52%;top:72%;width:52%;transform:translate(-50%,-50%);z-index:5;}
+  .subBuddyOnShoulder{right:-2%;top:24%;width:29%;transform:translate(0,-50%);z-index:6;}
+  .dynamicMascot{display:block;width:100%;height:auto;}
+  .dynamicJobs{margin-top:-2px;gap:7px;}
+  .dynamicJobsTitle{font-size:16px;margin:0 0 3px;}
+  .dynamicJob{min-height:72px;padding:9px 6px;}
+  .dynamicJob b{font-size:12px;}
+  .dynamicJob span{font-size:9.5px;}
+}
+@media (max-width:420px){
+  .dynamicResultHero{padding:14px 10px 16px;}
+  .dynamicResultKicker{font-size:15px;margin-bottom:5px;}
+  .dynamicTypeBadge{width:52px;height:52px;flex-basis:52px;font-size:29px;}
+  .dynamicTypeName{font-size:18px;}
+  .dynamicAction{font-size:34px;}
+  .dynamicPhrase{font-size:12px;padding:7px 8px;}
+  .dynamicDescription{font-size:11.8px;line-height:1.6;}
+  .dynamicHumanStage{height:430px;}
+  .dynamicHuman{width:142%;left:53%;}
+  .mainBuddyOnHands{left:52%;top:72%;width:53%;}
+  .subBuddyOnShoulder{right:-2%;top:24%;width:30%;}
+}
