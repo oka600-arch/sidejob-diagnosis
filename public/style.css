@@ -242,3 +242,24 @@
   .mainBuddyOnHands{left:51%;top:69%;width:44%;}
   .subBuddyOnShoulder{right:0%;top:27%;width:23%;}
 }
+
+/* v11: final balance based on the supplied mobile reference image. */
+@media (max-width:700px){
+  .dynamicResultColumns{grid-template-columns:44% 56%;align-items:start}
+  .dynamicResultCopy{padding-right:0}
+  .dynamicHumanStage{height:350px;margin-top:-2px}
+  .dynamicHuman{width:124%;left:52%;height:100%;object-fit:contain}
+  /* Main mascot must visibly sit in the open palms, not below them. */
+  .mainBuddyOnHands{left:51%;top:62%;width:47%;transform:translate(-50%,-50%)}
+  /* Secondary mascot stays smaller and clearly on the shoulder. */
+  .subBuddyOnShoulder{right:-1%;top:25%;width:27%;transform:translate(0,-50%)}
+  .dynamicJobs{margin-top:0}
+  .dynamicJobsTitle{margin-top:0}
+}
+@media (max-width:420px){
+  .dynamicResultHero{padding:14px 10px 16px}
+  .dynamicHumanStage{height:350px}
+  .dynamicHuman{width:126%;left:52%}
+  .mainBuddyOnHands{left:51%;top:62%;width:48%}
+  .subBuddyOnShoulder{right:-1%;top:25%;width:27%}
+}
