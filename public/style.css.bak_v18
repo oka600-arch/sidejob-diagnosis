@@ -1,0 +1,399 @@
+:root{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#242424;background:#f3f0ed}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(135deg,#f8f5f1,#eeebe8)}button{font:inherit}.wrap{max-width:560px;margin:0 auto;padding:14px 12px 42px}.startScreen,.resultPage{min-height:calc(100vh - 28px);background:#fcfbf9;border-radius:28px;padding:22px 22px 20px;box-shadow:0 8px 28px rgba(60,45,40,.08);display:flex;flex-direction:column;position:relative;overflow:hidden}.quick{align-self:flex-end;background:#f1e5e3;border-radius:22px;padding:11px 18px;font-size:16px;font-weight:700;line-height:1.35}.startScreen h1{font-size:43px;line-height:1.12;text-align:center;margin:35px 0 5px;letter-spacing:.03em}.subtitle{text-align:center;color:#4c4c4c;letter-spacing:.05em;font-size:16px}.startMascot{flex:1;display:flex;align-items:center;justify-content:center;min-height:350px;position:relative}.coverNote{position:absolute;font-family:"Hiragino Kaku Gothic ProN",sans-serif;font-weight:600;font-size:15px;line-height:1.55;z-index:3;transform:rotate(-5deg)}.leftNote{top:72px;left:28px}.rightNote{top:405px;right:18px;transform:rotate(5deg)}.coverScene{width:100%;height:330px;position:relative;margin-top:12px}.coverMascot{position:absolute;left:50%;top:75px;transform:translateX(-35%);z-index:3}.coverMascot .mascot{width:185px;height:205px}.laptop{position:absolute;z-index:5;left:21%;top:148px;width:155px;height:100px;transform:skewY(-2deg)}.laptop .screen{height:72px;border:4px solid #222;border-radius:7px 7px 2px 2px;background:#8e9298;color:#fff;display:grid;place-items:center;font-size:28px;font-family:Arial}.laptop .base{height:12px;background:#333;border-radius:2px 2px 10px 10px;margin:0 -8px}.books{position:absolute;z-index:1;bottom:57px;width:90px}.books i{display:block;height:13px;border:2px solid #555;border-radius:2px;background:#eee;margin:2px 0}.leftBooks{left:6%}.rightBooks{right:3%}.coffee{position:absolute;left:8%;bottom:102px;width:42px;height:48px;z-index:4}.coffee:before{content:"";position:absolute;width:34px;height:30px;background:#f8f8f8;border:3px solid #555;border-radius:4px;top:9px}.coffee span{position:absolute;right:0;top:15px;width:15px;height:18px;border:3px solid #555;border-left:0;border-radius:0 12px 12px 0}.coffee:after{content:"〰";position:absolute;top:-12px;left:3px;color:#999;font-size:24px}.startBtn{border:0;border-radius:28px;background:#4e4e4e;color:#fff;padding:17px 22px;font-weight:800;font-size:18px;box-shadow:0 5px 12px rgba(70,60,60,.15);cursor:pointer}.startBtn span{font-size:24px;margin-left:8px}.free{text-align:center;margin:15px 0 0;font-size:14px;color:#444}.mascot{position:relative;width:190px;height:215px;filter:drop-shadow(0 8px 3px rgba(150,120,120,.12))}.mascot .body{position:absolute;left:12px;bottom:10px;width:166px;height:170px;border:3px solid #222;border-radius:48% 48% 43% 43%;background:#fff}.eye{position:absolute;width:7px;height:7px;border-radius:50%;background:#222;top:76px}.eye.left{left:59px}.eye.right{right:59px}.mouth{position:absolute;left:50%;top:83px;transform:translateX(-50%);font-size:14px}.arm{position:absolute;width:34px;height:18px;border:3px solid #222;border-radius:50%;background:#fff;top:94px}.leftArm{left:-11px;transform:rotate(-15deg)}.rightArm{right:-11px;transform:rotate(15deg)}.flower{position:absolute;z-index:2;left:76px;top:0;width:42px;height:45px}.flower i{position:absolute;width:21px;height:21px;border-radius:50%;background:#e7a3aa;border:3px solid #222}.flower i:nth-child(1){left:10px;top:0}.flower i:nth-child(2){left:0;top:11px}.flower i:nth-child(3){right:0;top:11px}.flower i:nth-child(4){left:10px;bottom:0}.flower b{position:absolute;width:13px;height:13px;background:#f0bf65;border:2px solid #222;border-radius:50%;left:15px;top:15px}.quizHead{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 12px}.circleBack{width:42px;height:42px;border:0;border-radius:50%;background:#faf9f7;font-size:32px;line-height:1;color:#333}.qcount{font-size:18px;font-weight:800}.shareGhost{width:42px}.progress{height:8px;background:#ddd;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;background:#a98784;border-radius:99px}.quizCard{background:#fcfbf9;border-radius:28px;padding:28px 20px;margin-top:18px;min-height:calc(100vh - 130px);box-shadow:0 8px 25px rgba(60,45,40,.06)}.question{font-size:25px;line-height:1.5;font-weight:750;margin:28px 4px 26px}.options{display:grid;gap:10px}.opt{border:1px solid #d9d5d1;background:#fff;border-radius:18px;padding:16px 13px;font-size:16px;text-align:center;cursor:pointer;transition:.15s}.opt:active{transform:scale(.99);background:#f7f1ef}.card{background:#fff;border-radius:28px;padding:28px;box-shadow:0 8px 25px rgba(60,45,40,.08)}.locked{text-align:center;margin-top:30px}.lockIcon{font-size:44px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#888;font-weight:800}.lead{line-height:1.8;color:#666}.preview{background:#f5f2ef;border-radius:20px;padding:18px;margin:18px 0}.preview h2{color:var(--type);margin:7px 0}.btn{border:0;border-radius:18px;padding:14px;background:#eee}.resultPage{padding:18px 12px 20px}.resultTop{display:flex;justify-content:center;align-items:center;font-size:20px;font-weight:800;position:relative;margin-bottom:14px}.resultTop button{position:absolute;right:4px;border:0;background:none;font-size:31px;transform:rotate(-25deg)}.resultCard{position:relative;overflow:hidden;background:var(--soft);border-radius:28px;padding:22px 18px 16px;min-height:500px}.resultHeading{display:flex;align-items:center;gap:14px}.typeCircle{width:68px;height:68px;border-radius:50%;background:var(--type);color:white;display:grid;place-items:center;font-size:36px;font-weight:800}.typeName{font-size:19px;color:var(--type);font-weight:800}.typeEn{font-size:15px;color:#555}.resultCard h1{font-size:40px;margin:14px 0 6px}.phrase{display:inline-block;background:rgba(255,255,255,.55);border-radius:20px;padding:7px 14px;font-weight:700}.speech{position:absolute;right:18px;top:78px;border:1px solid #bbb;background:#fff;border-radius:50%;padding:13px 16px;text-align:center;font-size:14px;font-weight:700;transform:rotate(6deg)}.resultArt{height:235px;display:flex;align-items:end;justify-content:center;position:relative}.resultArt .smallMascot{transform:scale(.92)}.resultArt .flower i{background:var(--type)}.typeSymbol{position:absolute;left:calc(50% + 50px);top:66px;font-size:28px;color:var(--type);font-weight:900}.prop{position:absolute;z-index:5;font-size:42px;line-height:1}.prop-R{left:17%;bottom:52px}.prop-I{right:15%;top:33px}.prop-S{right:16%;top:22px;font-size:54px}.prop-C{left:10%;top:44px;font-size:35px}.prop-E{right:10%;bottom:58px;font-size:38px}.prop-A{left:12%;bottom:45px;font-size:38px}.resultDecor{position:absolute;width:38px;height:3px;background:#999;bottom:44px}.leftDecor{left:8%}.rightDecor{right:8%}.tags{display:flex;flex-wrap:wrap;gap:7px}.tags span{background:rgba(255,255,255,.65);border-radius:16px;padding:8px 11px;font-size:13px}.lineCard{width:100%;margin-top:14px;border:1px solid #e2dfdc;background:#fff;border-radius:22px;padding:15px;display:flex;align-items:center;gap:14px;text-align:left;cursor:pointer}.lineLogo{width:56px;height:56px;border-radius:14px;background:#06c755;color:#fff;display:grid;place-items:center;font-weight:900;font-size:12px}.lineCard b,.lineCard strong{font-size:16px}.lineCard i{margin-left:auto;font-size:32px;font-style:normal;color:#777}.benefits{display:grid;grid-template-columns:repeat(3,1fr);margin:16px 2px 14px}.benefits div{text-align:center;font-size:27px;padding:7px 4px;border-right:1px solid #ddd}.benefits div:last-child{border-right:0}.benefits span{display:block;font-size:11px;line-height:1.45;margin-top:5px}.homeBtn{width:100%;border:0;border-radius:26px;padding:17px;background:#929aa4;color:#fff;font-size:16px}.hiddenTop5{display:block;margin:16px 0 14px;background:#f5f2ef;border-radius:20px;padding:18px}.hiddenTop5 h2{font-size:20px;margin:0 0 12px}.jobMini{display:flex;gap:10px;align-items:center;padding:10px;background:#fff;border-radius:12px;margin:6px 0}.jobMini span{font-weight:800}.error{position:fixed;left:12px;right:12px;bottom:12px;background:#fff0f1;color:#8b1e2d;border-radius:16px;padding:14px;box-shadow:0 10px 30px #0002;z-index:10}.error span{font-size:12px}.error .btn{margin-top:8px}@media(max-width:420px){.startScreen h1{font-size:38px}.startMascot{min-height:300px}.leftNote{left:12px;top:68px;font-size:12px}.rightNote{right:4px;top:380px;font-size:12px}.laptop{left:17%;top:146px;width:135px}.coverMascot{transform:translateX(-28%) scale(.9)}.question{font-size:21px}.resultCard{min-height:480px}.resultCard h1{font-size:36px}.speech{font-size:12px;padding:11px 13px}}
+
+/* Reference-image based UI: use the supplied visual as the source artwork so the mascot stays natural. */
+.coverReference{width:100%;display:flex;justify-content:center;margin:0 auto 4px;overflow:hidden;border-radius:24px}.coverReference img{display:block;width:100%;height:auto;max-height:calc(100vh - 150px);object-fit:contain;object-position:top center}.startScreen{padding:14px 12px 18px;justify-content:flex-start}.startScreen .startBtn{margin-top:4px}.free{margin-bottom:0}.resultImageWrap{width:100%;border-radius:26px;overflow:hidden;background:#fff}.resultImageWrap img{display:block;width:100%;height:auto}.resultPage{padding:14px 12px 20px}.resultPage .lineCard{margin-top:14px}.resultPage .benefits{margin-top:14px}.resultPage .homeBtn{margin-top:0}.coverScene,.coverNote,.quick,.startScreen h1,.startScreen .subtitle,.startScreen .startMascot{display:none}
+@media(max-width:420px){.coverReference img{max-height:calc(100vh - 145px)}.startScreen{padding:10px 8px 16px}.resultImageWrap{border-radius:22px}}
+
+
+/* Final reference-based cover + LINE gate */
+.startScreen{padding:24px 22px 18px;justify-content:flex-start;background:#fcfbf9}
+.coverTop{position:relative;text-align:center}
+.coverTop .quick{position:absolute;right:0;top:0;background:#f1e5e3;border-radius:22px;padding:10px 16px;font-size:15px;line-height:1.35}
+.coverTop h1{font-size:43px;line-height:1.08;text-align:center;margin:62px 0 7px;letter-spacing:.04em}
+.coverTop .subtitle{font-size:16px;margin:0;color:#4c4c4c;letter-spacing:.08em}
+.coverCharacterArea{position:relative;display:flex;justify-content:center;align-items:center;min-height:365px;margin-top:6px}
+.coverCharacter{width:min(245px,68vw);height:auto;object-fit:contain;filter:drop-shadow(0 8px 3px rgba(150,120,120,.10))}
+.coverMessage{position:absolute;right:5%;top:43%;font-size:14px;line-height:1.5;font-weight:700;transform:rotate(5deg);color:#333}
+.coverBenefits{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 16px}
+.coverBenefits div{text-align:center;color:#333}
+.coverBenefits span{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 6px;border-radius:50%;background:#f1e9e6;font-size:23px}
+.coverBenefits b{font-size:12px;line-height:1.5;font-weight:600}
+.gatePage{padding:14px 12px 20px}
+.gateResultImage{width:100%;border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(60,45,40,.05)}
+.gateResultImage img{display:block;width:100%;height:auto}
+.gatePage .lineCard{margin-top:14px}
+.gatePage .homeBtn{margin-top:0}
+.gateShare{position:absolute;right:4px;font-size:28px}
+@media(max-width:420px){.coverTop h1{font-size:38px;margin-top:62px}.coverCharacterArea{min-height:320px}.coverCharacter{width:225px}.coverMessage{right:1%;font-size:12px}.coverBenefits span{width:42px;height:42px}.coverBenefits b{font-size:11px}}
+
+/* High-resolution supplied artwork */
+.coverCharacterArea{min-height:0;height:auto;margin:12px 0 8px;display:flex;justify-content:center;align-items:center}
+.coverCharacter{display:block;width:min(100%,430px);height:auto;max-height:none;object-fit:contain;filter:none}
+.coverMessage{right:3%;top:52%;font-size:13px}
+@media(max-width:420px){.coverCharacterArea{margin:8px 0 6px}.coverCharacter{width:100%}.coverMessage{right:2%;top:52%;font-size:11px}}
+
+/* Result gate uses the user's supplied high-resolution R/I/S/C/E/A artwork. */
+.gateResultImage{box-shadow:none;background:transparent}
+.gateResultImage img{width:100%;height:auto;image-rendering:auto}
+
+/* Polished post-LINE result screen: visual refresh only */
+.polishedResult{background:#fffdf8;padding:12px 10px 22px;box-shadow:0 10px 34px rgba(83,67,48,.08);background-image:radial-gradient(circle at 8% 24%,rgba(244,197,66,.12) 0 38px,transparent 39px),radial-gradient(circle at 94% 72%,rgba(242,120,168,.09) 0 42px,transparent 43px)}
+.polishedResult .resultTop{font-size:22px;margin:2px 2px 12px;color:#222}
+.polishedResult .resultTop button{color:#222}
+.polishedHero{border-radius:26px;background:#fff;box-shadow:0 4px 16px rgba(80,65,50,.07);margin-bottom:12px}
+.polishedHero img{width:100%;height:auto;display:block}
+.friendStatus{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #d7efdf;border-radius:22px;padding:13px 14px;box-shadow:0 4px 14px rgba(40,100,65,.05);margin:12px 0}
+.friendStatus .lineLogo{flex:0 0 54px;width:54px;height:54px;border-radius:14px;font-size:11px}
+.friendStatus b{font-size:16px;color:#222}
+.friendStatus div span{display:block;font-size:12px;line-height:1.55;color:#667085;margin-top:3px}
+.statusCheck{margin-left:auto;flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#e8f8ef;color:#13a55b;border:2px solid #b9e9ce;font-size:23px;font-weight:900}
+.top5Panel{background:linear-gradient(180deg,#fff5d8,#fff9e9);border:1px solid #f5e3ad;border-radius:25px;padding:15px 10px 10px;margin:12px 0}
+.top5Title{display:flex;align-items:center;justify-content:center;gap:9px;margin:0 0 10px;color:#202020}
+.top5Title h2{font-size:22px;line-height:1.2;margin:0;font-weight:900}
+.crown{font-size:31px;color:#e8ad25;line-height:1}
+.top5List{display:grid;gap:7px}
+.jobCard{display:grid;grid-template-columns:42px minmax(0,1fr) 18px;align-items:center;gap:7px;background:#fff;border-radius:18px;padding:9px 9px 9px 8px;box-shadow:0 2px 8px rgba(85,65,35,.05);min-height:72px}
+.jobRank{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#f1c044;color:#fff;font-size:17px;font-weight:900;margin:auto}
+.jobCard:nth-child(2) .jobRank{background:#aeb9c5}.jobCard:nth-child(3) .jobRank{background:#e3a66d}.jobCard:nth-child(4) .jobRank{background:#b9cde0}.jobCard:nth-child(5) .jobRank{background:#eab8c6}
+.jobBody{min-width:0}.jobName{font-size:16px;font-weight:900;line-height:1.25;color:#202833}.jobDesc{font-size:11px;line-height:1.45;color:#667085;margin-top:2px}.jobMeta{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}.jobMeta span{font-size:9px;color:#667085;background:#f5f6f7;border-radius:9px;padding:2px 6px}.jobArrow{font-size:25px;color:#7b8794;text-align:center}
+.polishedBenefits{background:#fff;border:1px solid #eee7dc;border-radius:22px;margin:12px 0;padding:0;overflow:hidden;box-shadow:0 3px 12px rgba(70,55,40,.04)}
+.polishedBenefits div{border-right:1px solid #eee7dc;padding:12px 6px}.polishedBenefits div:last-child{border-right:0}.polishedBenefits .benefitIcon{display:block;font-size:25px;line-height:1.1;margin-bottom:5px;color:#26313c}.polishedBenefits div>span:last-child{font-size:11px;line-height:1.4;color:#52606d}
+.polishedHome{background:#8da1b2;border-radius:26px;font-weight:800;box-shadow:none;font-size:16px}
+@media(max-width:420px){.polishedResult{padding:10px 7px 18px}.polishedResult .resultTop{font-size:20px}.friendStatus{padding:12px 11px}.friendStatus b{font-size:14px}.friendStatus div span{font-size:11px}.statusCheck{width:38px;height:38px}.top5Panel{padding:13px 7px 9px}.top5Title h2{font-size:19px}.crown{font-size:27px}.jobCard{grid-template-columns:35px minmax(0,1fr) 14px;gap:5px;padding:8px 6px;min-height:68px}.jobRank{width:31px;height:31px;font-size:15px}.jobName{font-size:14px}.jobDesc{font-size:10px}.jobMeta span{font-size:8px}.jobArrow{font-size:22px}}
+
+.detailGrid{display:grid;gap:12px;margin:12px 0}.detailPanel{background:#fff;border:1px solid #eee7dc;border-radius:22px;padding:16px 14px;box-shadow:0 3px 12px rgba(70,55,40,.04)}.detailHeading{display:flex;align-items:center;gap:10px}.detailHeading>span{width:42px;height:42px;border-radius:14px;background:#f8f2e7;display:grid;place-items:center;font-size:23px}.detailHeading small{font-size:9px;letter-spacing:.14em;color:#9a8c78;font-weight:900}.detailHeading h3{font-size:18px;margin:2px 0 0;color:#27313b}.detailLead{font-size:12px;line-height:1.6;color:#667085;margin:10px 2px 9px}.detailPanel ol,.detailPanel ul{padding:0;margin:0;list-style:none}.roadmapPanel li{display:grid;grid-template-columns:58px 1fr;gap:8px;align-items:center;padding:9px 0;border-top:1px dashed #e7e0d6;font-size:12px;line-height:1.45}.roadmapPanel li:first-child{border-top:0}.roadmapPanel li b{font-size:10px;color:#a27b2e;background:#fff4d2;border-radius:10px;padding:5px 6px;text-align:center}.roadmapPanel li span{color:#3f4b56;font-weight:650}.learningPanel li{display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-top:1px dashed #e7e0d6;font-size:12px;line-height:1.5;color:#3f4b56}.learningPanel li:first-child{border-top:0}.resourceDot{flex:0 0 22px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e8f7ee;color:#19a35b;font-size:12px;font-weight:900}.polishedResult .polishedBenefits{margin-top:2px}
+@media(max-width:420px){.detailPanel{padding:14px 12px}.detailHeading h3{font-size:16px}.detailLead,.roadmapPanel li,.learningPanel li{font-size:11px}.roadmapPanel li{grid-template-columns:55px 1fr}}
+
+.resourceItem{display:flex;gap:0;align-items:flex-start}.resourceItem a{display:flex;flex-direction:column;gap:3px;color:inherit;text-decoration:none;flex:1}.resourceItem a b{font-size:14px}.resourceItem a small{font-size:11px;opacity:.7;line-height:1.4}.resourceItem a:hover{text-decoration:underline}.resourceDot{display:none}
+
+
+/* v2: main human + subtype buddy on shoulder */
+.resultCharacterV2{position:relative;overflow:visible!important}
+.resultCharacterV2>img{display:block;width:100%;border-radius:26px}
+.subtypeBuddy{position:absolute;right:10px;top:12px;width:78px;min-height:78px;border-radius:24px;background:#fff;box-shadow:0 8px 22px rgba(50,40,30,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:3px solid var(--buddy,#d8c6a4);transform:rotate(4deg);z-index:2}
+.subtypeBuddy .buddySymbol{font-size:31px;line-height:1}
+.subtypeBuddy small{font-size:8px;line-height:1.2;text-align:center;color:#555;font-weight:800}
+.subtype-R{--buddy:#9B8A82}.subtype-I{--buddy:#7189A5}.subtype-S{--buddy:#D596A3}.subtype-C{--buddy:#8EA393}.subtype-E{--buddy:#D9AE4E}.subtype-A{--buddy:#8D76A9}
+.typeSummary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 12px}
+.typeSummary>div{background:#fff;border:1px solid #eee7dc;border-radius:18px;padding:12px;box-shadow:0 3px 10px rgba(70,55,40,.04)}
+.typeSummary span{display:block;font-size:9px;color:#8a8f98;font-weight:800;margin-bottom:3px}
+.typeSummary b{display:block;font-size:15px;color:#242a31;line-height:1.3}
+.typeSummary small{display:block;font-size:9px;line-height:1.35;color:#697381;margin-top:4px}
+.typeSub{display:flex!important;align-items:center;gap:8px}.typeSub .subBadge{width:38px;height:38px;border-radius:12px;background:#f7f0e4;display:grid;place-items:center;font-size:23px;flex:0 0 auto;margin:0}
+@media(max-width:420px){.subtypeBuddy{width:66px;min-height:66px;border-radius:20px;right:7px;top:8px}.subtypeBuddy .buddySymbol{font-size:26px}.subtypeBuddy small{font-size:7px}.typeSummary b{font-size:13px}.typeSummary small{font-size:8px}}
+
+/* Character/result artwork update: supplied R result artwork is authoritative. */
+.resultCharacterV2.exactReferenceResult{background:transparent;box-shadow:none;border-radius:0}
+.resultCharacterV2.exactReferenceResult>img{border-radius:0;box-shadow:none}
+.subtypeCard{display:flex;align-items:center;gap:10px;margin:10px 0 0;padding:11px 12px;border-radius:18px;background:#edf3e8;border:1px solid #dce8d8;color:#334638}
+.subtypeCard .subLetter{width:40px;height:40px;flex:0 0 40px;border-radius:50%;display:grid;place-items:center;background:var(--buddy,#477D67);color:#fff;font-size:21px;font-weight:900}
+.subtypeCard div{min-width:0}.subtypeCard small{display:block;font-size:9px;font-weight:800;color:#6d7a70}.subtypeCard b{display:block;font-size:14px;line-height:1.25;margin-top:2px}.subtypeCard span:not(.subLetter){display:block;font-size:10px;line-height:1.35;margin-top:2px;color:#647166}
+.subtype-R{--buddy:#C9553D}.subtype-I{--buddy:#477D67}.subtype-A{--buddy:#8A70A6}.subtype-S{--buddy:#6E9B7D}.subtype-E{--buddy:#E47B49}.subtype-C{--buddy:#C99B3D}
+.coverCharacterArea .coverCharacter{width:min(100%,520px)}
+
+/* Questions intentionally show no RIASEC characters or type-specific visual clues. */
+.quizCardTextOnly .options{margin-top:18px}
+.resultLabels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 12px}.resultLabels>div{background:#fff;border:1px solid #eee7dc;border-radius:18px;padding:12px;box-shadow:0 3px 10px rgba(70,55,40,.04)}.resultLabels small{display:block;font-size:9px;color:#8a8f98;font-weight:800;margin-bottom:3px}.resultLabels b{display:block;font-size:14px;color:#242a31;line-height:1.35}@media(max-width:420px){.resultLabels b{font-size:12px}}
+
+/* Exact supplied result-screen treatment */
+.referenceStyleResult{background:#fcfbf7;padding:10px 8px 24px}
+.referenceStyleResult .resultTop{font-size:20px;color:#3b2b22;margin:2px 4px 8px}
+.referenceStyleResult .resultTop button{color:#3b2b22}
+.referenceStyleResult .polishedHero{margin:0}
+.referenceStyleResult .resultImageWrap{border-radius:0;background:transparent}
+.referenceStyleResult .resultCharacterV2>img{width:100%;height:auto;border-radius:0;display:block}
+.referenceStyleResult .exactReferenceResult{box-shadow:none}
+.referenceResultLabels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 2px}
+.referenceResultLabels>div{background:#fff;border:1px solid #eee5da;border-radius:16px;padding:10px 11px}
+.referenceResultLabels small{display:block;color:#8b8176;font-size:9px;font-weight:800;margin-bottom:3px}
+.referenceResultLabels b{display:block;color:#302820;font-size:13px;line-height:1.35}
+.dynamicResultHero{position:relative;overflow:hidden;border-radius:0;background:#fffdf8;padding:18px 14px 16px;min-height:0}.dynamicResultKicker{font-size:14px;font-weight:800;margin-bottom:6px;color:#4a3a31}.dynamicResultMain{display:flex;align-items:center;gap:10px}.dynamicTypeBadge{width:56px;height:56px;border-radius:50%;background:var(--main);color:#fff;display:grid;place-items:center;font-size:31px;font-weight:900;flex:0 0 56px}.dynamicTypeName{font-size:21px;font-weight:900;color:#3b2b22}.dynamicTypeEn{font-size:12px;color:#6f665f;margin-top:1px}.dynamicAction{font-size:36px;font-weight:900;line-height:1.05;margin-top:9px;color:#33271f}.dynamicPhrase{display:inline-block;border:2px solid var(--main);border-radius:28px;padding:8px 12px;margin-top:8px;font-weight:800;color:#493a30;background:#fff}.dynamicHumanStage{position:relative;width:min(100%,430px);margin:0 auto;aspect-ratio:2/3;overflow:visible}.dynamicHuman{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1}.mainBuddyOnHands,.subBuddyOnShoulder{position:absolute;z-index:3;pointer-events:none}.mainBuddyOnHands{left:50%;top:69%;width:28%;transform:translate(-50%,-50%)}.subBuddyOnShoulder{right:4%;top:37%;width:23%;transform:translate(0,-50%)}.dynamicMascot{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 5px 5px rgba(60,45,35,.14))}.buddyLabel{position:absolute;left:50%;top:-17px;transform:translateX(-50%);background:var(--main);color:#fff;border-radius:999px;padding:3px 7px;font-size:8px;font-weight:900;white-space:nowrap;box-shadow:0 2px 5px rgba(60,45,35,.12);z-index:4}.subLabel{background:#5e6c63}.dynamicDescription{font-size:13px;line-height:1.55;color:#5f5a55;margin:0 4px 10px;font-weight:700}.dynamicJobs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:6px}.dynamicJobsTitle{grid-column:1/-1;font-weight:900;font-size:17px;margin:3px 0 1px}.dynamicJob{background:#fff;border:1px solid #eee5da;border-radius:14px;padding:10px;font-weight:800;font-size:12px;color:#332b26;box-shadow:0 2px 7px rgba(85,65,35,.04)}
+
+@media(max-width:420px){.referenceStyleResult{padding:8px 5px 20px}.referenceResultLabels b{font-size:12px}.dynamicResultHero{padding:15px 10px}.dynamicAction{font-size:30px}.dynamicTypeName{font-size:18px}.dynamicTypeBadge{width:50px;height:50px;flex-basis:50px;font-size:28px}.mainBuddyOnHands{width:31%;top:69%}.subBuddyOnShoulder{width:26%;right:2%;top:36%}.buddyLabel{font-size:7px;padding:2px 6px;top:-15px}.dynamicJobs{gap:6px}.dynamicJob{font-size:11px;padding:9px}}
+
+
+/* v8: cleaner result composition — make the person and result explanation more prominent */
+.dynamicResultHero{padding:18px 14px 18px}
+.dynamicResultKicker{font-size:15px;margin-bottom:8px}
+.dynamicResultMain{gap:12px}
+.dynamicTypeBadge{width:60px;height:60px;flex-basis:60px;font-size:34px}
+.dynamicTypeName{font-size:23px;line-height:1.2}
+.dynamicTypeEn{font-size:12px}
+.dynamicAction{font-size:42px;margin-top:10px;letter-spacing:.02em}
+.dynamicPhrase{font-size:16px;padding:9px 15px;margin-top:10px;border-width:2px}
+.dynamicHumanStage{width:min(100%,500px);aspect-ratio:1.85/3;margin:2px auto 0}
+.mainBuddyOnHands{left:50%;top:72%;width:31%;transform:translate(-50%,-50%)}
+.subBuddyOnShoulder{right:4%;top:32%;width:22%;transform:translate(0,-50%)}
+.buddyLabel{display:none}
+.dynamicDescription{font-size:16px;line-height:1.75;color:#403a35;margin:3px 2px 14px;font-weight:700;background:var(--soft);border-radius:18px;padding:13px 14px}
+.dynamicJobs{gap:8px;margin-top:4px}
+.dynamicJobsTitle{font-size:18px;margin:4px 0 3px}
+.dynamicJob{font-size:13px;padding:11px 10px;border-radius:15px}
+@media(max-width:420px){
+  .dynamicResultHero{padding:15px 10px 16px}
+  .dynamicResultKicker{font-size:14px}
+  .dynamicTypeBadge{width:54px;height:54px;flex-basis:54px;font-size:30px}
+  .dynamicTypeName{font-size:20px}
+  .dynamicAction{font-size:35px}
+  .dynamicPhrase{font-size:14px;padding:8px 12px}
+  .dynamicHumanStage{width:100%;aspect-ratio:1.82/3}
+  .mainBuddyOnHands{width:34%;top:72%}
+  .subBuddyOnShoulder{width:24%;right:2%;top:32%}
+  .dynamicDescription{font-size:14px;line-height:1.7;padding:12px 13px}
+  .dynamicJobsTitle{font-size:16px}
+  .dynamicJob{font-size:11.5px;padding:9px}
+}
+
+
+/* v9: result screen follows the supplied reference composition */
+.referenceStyleResult .resultTop{display:none}
+.referenceStyleResult .polishedHero{margin:0}
+.dynamicResultHero{background:#fffdf8;padding:20px 18px 22px;border-radius:0;overflow:hidden}
+.dynamicResultKicker{font-size:18px;font-weight:800;color:#4a3a31;margin:0 0 6px}
+.dynamicResultColumns{display:grid;grid-template-columns:47% 53%;align-items:start;gap:0}
+.dynamicResultCopy{padding-top:3px;position:relative;z-index:5}
+.dynamicResultMain{gap:11px;align-items:center}
+.dynamicTypeBadge{width:78px;height:78px;flex-basis:78px;font-size:45px;border-radius:50%}
+.dynamicTypeName{font-size:28px;line-height:1.18;font-weight:900;color:#3b2b22}
+.dynamicTypeEn{font-size:15px;color:#6f665f;margin-top:2px}
+.dynamicAction{font-size:56px;line-height:1.02;font-weight:900;margin-top:15px;color:#33271f;letter-spacing:.02em}
+.dynamicPhrase{font-size:17px;padding:9px 17px;margin-top:13px;border:2px solid var(--main);border-radius:999px;background:#fff;font-weight:900;color:#493a30;display:inline-block}
+.dynamicDescription{font-size:16px;line-height:1.8;color:#4d4843;margin:18px 8px 0 2px;font-weight:600;background:transparent;padding:0}
+.dynamicHumanStage{position:relative;width:100%;height:465px;aspect-ratio:auto;margin:0;overflow:visible}
+.dynamicHuman{position:absolute;left:50%;top:0;transform:translateX(-50%);width:100%;height:100%;object-fit:contain;object-position:center top;z-index:1}
+.mainBuddyOnHands{left:50%;top:75%;width:43%;transform:translate(-50%,-50%);z-index:4}
+.subBuddyOnShoulder{right:3%;top:28%;width:25%;transform:translate(0,-50%);z-index:4}
+.dynamicMascot{filter:drop-shadow(0 4px 4px rgba(60,45,35,.12))}
+.dynamicJobs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:4px 0 0}
+.dynamicJobsTitle{grid-column:1/-1;font-size:20px;font-weight:900;margin:3px 0 3px;color:#33271f}
+.dynamicJob{background:#fff8f0;border:1px solid #f0e2d3;border-radius:16px;padding:14px 10px;text-align:center;min-height:88px;display:flex;flex-direction:column;justify-content:center;gap:5px;box-shadow:none}
+.dynamicJob b{font-size:15px;color:#332b26;line-height:1.3}
+.dynamicJob span{font-size:11px;color:#625b54;line-height:1.45}
+.dynamicSubtype{margin-top:18px;background:var(--subsoft);border-radius:24px;padding:15px 18px 17px}
+.dynamicSubtypeTitle{font-size:15px;font-weight:800;color:#445147;margin-bottom:7px}
+.dynamicSubtypeBody{display:grid;grid-template-columns:70px 1fr 1px 1.5fr;gap:12px;align-items:center}
+.dynamicSubtypeBadge{width:64px;height:64px;border-radius:50%;background:var(--sub);color:#fff;display:grid;place-items:center;font-size:37px;font-weight:900}
+.dynamicSubtypeName b{display:block;font-size:21px;line-height:1.25;color:#314036}
+.dynamicSubtypeName small{display:block;font-size:12px;color:#647166;margin-top:2px}
+.dynamicSubtypeDivider{width:1px;height:68px;background:#a9b8aa}
+.dynamicSubtypeText b{display:block;background:rgba(255,255,255,.5);border-radius:999px;padding:7px 12px;font-size:14px;color:#3f4f43;width:max-content;max-width:100%}
+.dynamicSubtypeText span{display:block;font-size:13px;line-height:1.6;color:#556057;margin-top:7px}
+@media(max-width:700px){
+  .dynamicResultHero{padding:16px 12px 18px}
+  .dynamicResultKicker{font-size:15px}
+  .dynamicResultColumns{grid-template-columns:45% 55%}
+  .dynamicTypeBadge{width:54px;height:54px;flex-basis:54px;font-size:31px}
+  .dynamicTypeName{font-size:19px}
+  .dynamicTypeEn{font-size:11px}
+  .dynamicAction{font-size:37px;margin-top:11px}
+  .dynamicPhrase{font-size:13px;padding:7px 10px;margin-top:9px}
+  .dynamicDescription{font-size:12.5px;line-height:1.65;margin-top:12px}
+  .dynamicHumanStage{height:360px}
+  .mainBuddyOnHands{width:45%;top:76%}
+  .subBuddyOnShoulder{width:27%;top:27%}
+  .dynamicJobs{grid-template-columns:repeat(2,1fr);gap:7px}
+  .dynamicJobsTitle{font-size:16px}
+  .dynamicJob{min-height:70px;padding:9px 7px}
+  .dynamicJob b{font-size:12px}
+  .dynamicJob span{font-size:9.5px}
+  .dynamicSubtype{padding:12px}
+  .dynamicSubtypeBody{grid-template-columns:48px 1fr;gap:8px}
+  .dynamicSubtypeBadge{width:46px;height:46px;font-size:27px}
+  .dynamicSubtypeName b{font-size:15px}
+  .dynamicSubtypeName small{font-size:9px}
+  .dynamicSubtypeDivider{display:none}
+  .dynamicSubtypeText{grid-column:1/-1;padding-top:5px}
+  .dynamicSubtypeText b{font-size:11px;padding:6px 9px}
+  .dynamicSubtypeText span{font-size:10.5px;margin-top:5px}
+}
+
+
+/* v10: balance the mobile result composition around the supplied reference.
+   The person is larger, the main mascot sits directly on the open hands,
+   and the shoulder mascot is kept smaller so the hierarchy is clear. */
+@media(max-width:700px){
+  .dynamicResultColumns{grid-template-columns:44% 56%;}
+  .dynamicResultCopy{padding-right:2px;}
+  .dynamicTypeName{font-size:18px;line-height:1.22;}
+  .dynamicTypeEn{font-size:10px;}
+  .dynamicAction{font-size:36px;line-height:1.02;margin-top:10px;}
+  .dynamicPhrase{font-size:13px;line-height:1.35;padding:8px 10px;margin-top:9px;max-width:100%;}
+  .dynamicDescription{font-size:12.5px;line-height:1.62;margin:11px 5px 0 1px;}
+  .dynamicHumanStage{height:390px;margin-top:-2px;}
+  .dynamicHuman{width:116%;height:100%;left:52%;}
+  .mainBuddyOnHands{left:51%;top:69%;width:43%;z-index:4;}
+  .subBuddyOnShoulder{right:1%;top:27%;width:23%;z-index:4;}
+  .dynamicJobs{margin-top:0;gap:7px;}
+  .dynamicJobsTitle{font-size:16px;margin:0 0 3px;}
+  .dynamicJob{min-height:72px;padding:9px 6px;}
+  .dynamicJob b{font-size:12px;}
+  .dynamicJob span{font-size:9.5px;}
+}
+@media(max-width:420px){
+  .dynamicResultHero{padding:14px 10px 17px;}
+  .dynamicResultKicker{font-size:15px;margin-bottom:5px;}
+  .dynamicTypeBadge{width:52px;height:52px;flex-basis:52px;font-size:29px;}
+  .dynamicTypeName{font-size:18px;}
+  .dynamicAction{font-size:34px;}
+  .dynamicPhrase{font-size:12.5px;padding:7px 9px;}
+  .dynamicDescription{font-size:12px;line-height:1.62;}
+  .dynamicHumanStage{height:390px;}
+  .dynamicHuman{width:120%;left:52%;}
+  .mainBuddyOnHands{left:51%;top:69%;width:44%;}
+  .subBuddyOnShoulder{right:0%;top:27%;width:23%;}
+}
+
+/* v11: final balance based on the supplied mobile reference image. */
+@media (max-width:700px){
+  .dynamicResultColumns{grid-template-columns:44% 56%;align-items:start}
+  .dynamicResultCopy{padding-right:0}
+  .dynamicHumanStage{height:350px;margin-top:-2px}
+  .dynamicHuman{width:124%;left:52%;height:100%;object-fit:contain}
+  /* Main mascot must visibly sit in the open palms, not below them. */
+  .mainBuddyOnHands{left:51%;top:62%;width:47%;transform:translate(-50%,-50%)}
+  /* Secondary mascot stays smaller and clearly on the shoulder. */
+  .subBuddyOnShoulder{right:-1%;top:25%;width:27%;transform:translate(0,-50%)}
+  .dynamicJobs{margin-top:0}
+  .dynamicJobsTitle{margin-top:0}
+}
+@media (max-width:420px){
+  .dynamicResultHero{padding:14px 10px 16px}
+  .dynamicHumanStage{height:350px}
+  .dynamicHuman{width:126%;left:52%}
+  .mainBuddyOnHands{left:51%;top:62%;width:48%}
+  .subBuddyOnShoulder{right:-1%;top:25%;width:27%}
+}
+
+/* v12: final requested balance — large person, main mascot clearly seated on open palms, secondary mascot clearly on shoulder. */
+@media (max-width:700px){
+  .dynamicResultColumns{grid-template-columns:42% 58%;align-items:start;}
+  .dynamicResultCopy{padding-right:0;}
+  .dynamicTypeName{font-size:18px;line-height:1.2;}
+  .dynamicTypeEn{font-size:10px;}
+  .dynamicAction{font-size:36px;line-height:1.02;margin-top:10px;}
+  .dynamicPhrase{font-size:12.5px;line-height:1.35;padding:7px 9px;margin-top:9px;}
+  .dynamicDescription{font-size:12px;line-height:1.62;margin:11px 4px 0 1px;}
+  .dynamicHumanStage{height:430px;margin-top:-4px;overflow:visible;}
+  .dynamicHuman{width:138%;height:100%;left:53%;object-fit:contain;object-position:center top;}
+  /* Human hands are around 70% down the source image, so place the main mascot center there. */
+  .mainBuddyOnHands{left:52%;top:72%;width:52%;transform:translate(-50%,-50%);z-index:5;}
+  .subBuddyOnShoulder{right:-2%;top:24%;width:29%;transform:translate(0,-50%);z-index:6;}
+  .dynamicMascot{display:block;width:100%;height:auto;}
+  .dynamicJobs{margin-top:-2px;gap:7px;}
+  .dynamicJobsTitle{font-size:16px;margin:0 0 3px;}
+  .dynamicJob{min-height:72px;padding:9px 6px;}
+  .dynamicJob b{font-size:12px;}
+  .dynamicJob span{font-size:9.5px;}
+}
+@media (max-width:420px){
+  .dynamicResultHero{padding:14px 10px 16px;}
+  .dynamicResultKicker{font-size:15px;margin-bottom:5px;}
+  .dynamicTypeBadge{width:52px;height:52px;flex-basis:52px;font-size:29px;}
+  .dynamicTypeName{font-size:18px;}
+  .dynamicAction{font-size:34px;}
+  .dynamicPhrase{font-size:12px;padding:7px 8px;}
+  .dynamicDescription{font-size:11.8px;line-height:1.6;}
+  .dynamicHumanStage{height:430px;}
+  .dynamicHuman{width:142%;left:53%;}
+  .mainBuddyOnHands{left:52%;top:72%;width:53%;}
+  .subBuddyOnShoulder{right:-2%;top:24%;width:30%;}
+}
+
+/* v13: requested final character scale/placement.
+   Human fills the available right-side area; main buddy spans roughly neck-to-hands
+   and is centered directly on the open palms; subtype buddy is half that scale and
+   sits on the shoulder. */
+.dynamicHumanStage{width:100%;}
+.dynamicHuman{width:100%;height:100%;left:50%;object-fit:contain;object-position:center top;}
+.mainBuddyOnHands{left:50%;top:70%;width:80%;transform:translate(-50%,-50%);z-index:5;}
+.subBuddyOnShoulder{right:0%;top:25%;width:40%;transform:translate(0,-50%);z-index:6;}
+
+@media (max-width:700px){
+  .dynamicResultColumns{grid-template-columns:42% 58%;}
+  .dynamicHumanStage{height:450px;width:100%;margin-top:-2px;}
+  .dynamicHuman{width:100%;height:100%;left:50%;object-fit:contain;object-position:center top;}
+  .mainBuddyOnHands{left:50%;top:70%;width:80%;transform:translate(-50%,-50%);}
+  .subBuddyOnShoulder{right:0%;top:25%;width:40%;transform:translate(0,-50%);}
+}
+@media (max-width:420px){
+  .dynamicHumanStage{height:450px;width:100%;}
+  .dynamicHuman{width:100%;left:50%;}
+  .mainBuddyOnHands{left:50%;top:70%;width:80%;}
+  .subBuddyOnShoulder{right:0%;top:25%;width:40%;}
+}
+
+
+/* v16: based exactly on v13 — human only scaled to 1.5x.
+   All text, stage, main mascot, and subtype mascot positioning remain unchanged. */
+.dynamicHuman{width:150%;left:50%;height:100%;object-fit:contain;object-position:center top;}
+@media (max-width:700px){
+  .dynamicHuman{width:150%;left:50%;height:100%;object-fit:contain;object-position:center top;}
+}
+@media (max-width:420px){
+  .dynamicHuman{width:150%;left:50%;height:100%;}
+}
+
+/* v17: keep the v13 composition + 1.5x human, but shift the enlarged human left
+   so the result-card overflow does not crop the right side. */
+.dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
+@media (max-width:700px){
+  .dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
+}
+@media (max-width:420px){
+  .dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
+}
+
+/* v18: definitive character placement
+   - Human is genuinely 1.5x larger than the v13 base.
+   - Human shifts slightly right without clipping.
+   - Main mascot is centered on the open palms.
+   - Sub mascot is placed on the shoulder, smaller than the main mascot. */
+.dynamicHumanStage{
+  position:relative;
+  width:100%;
+  height:560px;
+  margin:0;
+  aspect-ratio:auto;
+  overflow:visible;
+}
+.dynamicHuman{
+  position:absolute;
+  top:0;
+  left:55%;
+  width:auto;
+  height:150%;
+  max-width:none;
+  max-height:none;
+  transform:translateX(-50%);
+  object-fit:contain;
+  object-position:center top;
+  z-index:1;
+}
+.mainBuddyOnHands{
+  left:55%;
+  top:68%;
+  width:46%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+}
+.subBuddyOnShoulder{
+  left:77%;
+  right:auto;
+  top:30%;
+  width:24%;
+  transform:translate(-50%,-50%);
+  z-index:6;
+}
+
+@media (max-width:700px){
+  .dynamicHumanStage{height:560px;width:100%;margin-top:-2px;}
+  .dynamicHuman{left:55%;height:150%;width:auto;}
+  .mainBuddyOnHands{left:55%;top:68%;width:46%;}
+  .subBuddyOnShoulder{left:77%;top:30%;width:24%;right:auto;}
+}
+@media (max-width:420px){
+  .dynamicHumanStage{height:560px;width:100%;}
+  .dynamicHuman{left:55%;height:150%;width:auto;}
+  .mainBuddyOnHands{left:55%;top:68%;width:48%;}
+  .subBuddyOnShoulder{left:77%;top:30%;width:27%;right:auto;}
+}

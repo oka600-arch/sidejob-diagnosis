@@ -343,11 +343,13 @@
   .dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
 }
 
-/* v18: definitive character placement
-   - Human is genuinely 1.5x larger than the v13 base.
-   - Human shifts slightly right without clipping.
-   - Main mascot is centered on the open palms.
-   - Sub mascot is placed on the shoulder, smaller than the main mascot. */
+/* v19: requested tool-data-only correction.
+   - Human is sized to fill the available right-side whitespace, not a fixed 1.5x scale.
+   - Keep the human slightly right, but fully visible.
+   - Main mascot stays on the open palms.
+   - Sub mascot stays on the shoulder.
+   - Do not alter or regenerate the character artwork itself.
+   - Preserve the source alpha/artwork so no character parts are removed by CSS. */
 .dynamicHumanStage{
   position:relative;
   width:100%;
@@ -359,9 +361,9 @@
 .dynamicHuman{
   position:absolute;
   top:0;
-  left:55%;
+  left:58%;
   width:auto;
-  height:150%;
+  height:182%;
   max-width:none;
   max-height:none;
   transform:translateX(-50%);
@@ -370,16 +372,16 @@
   z-index:1;
 }
 .mainBuddyOnHands{
-  left:55%;
-  top:68%;
+  left:58%;
+  top:72%;
   width:46%;
   transform:translate(-50%,-50%);
   z-index:5;
 }
 .subBuddyOnShoulder{
-  left:77%;
+  left:82%;
   right:auto;
-  top:30%;
+  top:27%;
   width:24%;
   transform:translate(-50%,-50%);
   z-index:6;
@@ -387,13 +389,13 @@
 
 @media (max-width:700px){
   .dynamicHumanStage{height:560px;width:100%;margin-top:-2px;}
-  .dynamicHuman{left:55%;height:150%;width:auto;}
-  .mainBuddyOnHands{left:55%;top:68%;width:46%;}
-  .subBuddyOnShoulder{left:77%;top:30%;width:24%;right:auto;}
+  .dynamicHuman{left:58%;height:182%;width:auto;}
+  .mainBuddyOnHands{left:58%;top:72%;width:46%;}
+  .subBuddyOnShoulder{left:82%;top:27%;width:24%;right:auto;}
 }
 @media (max-width:420px){
   .dynamicHumanStage{height:560px;width:100%;}
-  .dynamicHuman{left:55%;height:150%;width:auto;}
-  .mainBuddyOnHands{left:55%;top:68%;width:48%;}
-  .subBuddyOnShoulder{left:77%;top:30%;width:27%;right:auto;}
+  .dynamicHuman{left:58%;height:182%;width:auto;}
+  .mainBuddyOnHands{left:58%;top:72%;width:48%;}
+  .subBuddyOnShoulder{left:82%;top:27%;width:27%;right:auto;}
 }
