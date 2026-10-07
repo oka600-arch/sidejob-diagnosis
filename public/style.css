@@ -322,13 +322,23 @@
   .subBuddyOnShoulder{right:0%;top:25%;width:40%;}
 }
 
-/* v15: restore v13 layout and enlarge ONLY the human to 2x.
-   All mascot positions and the surrounding result layout remain unchanged. */
-.dynamicHumanStage{overflow:visible;}
-.dynamicHuman{transform:scale(2);transform-origin:center top;}
+
+/* v16: based exactly on v13 — human only scaled to 1.5x.
+   All text, stage, main mascot, and subtype mascot positioning remain unchanged. */
+.dynamicHuman{width:150%;left:50%;height:100%;object-fit:contain;object-position:center top;}
 @media (max-width:700px){
-  .dynamicHuman{transform:scale(2);transform-origin:center top;}
+  .dynamicHuman{width:150%;left:50%;height:100%;object-fit:contain;object-position:center top;}
 }
 @media (max-width:420px){
-  .dynamicHuman{transform:scale(2);transform-origin:center top;}
+  .dynamicHuman{width:150%;left:50%;height:100%;}
+}
+
+/* v17: keep the v13 composition + 1.5x human, but shift the enlarged human left
+   so the result-card overflow does not crop the right side. */
+.dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
+@media (max-width:700px){
+  .dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
+}
+@media (max-width:420px){
+  .dynamicHuman{width:150%;left:25%;height:100%;object-fit:contain;object-position:center top;}
 }
