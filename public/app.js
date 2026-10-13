@@ -20,37 +20,67 @@ async function answer(q,a){answers[q.id]=a;track('question_answer',{question_id:
 async function complete(){try{track('diagnosis_complete');const d=await api('/api/diagnosis/complete',{method:'POST',body:JSON.stringify({diagnosis_id:did})});renderGate(d.preview)}catch(e){showErr(e)}}
 function renderGate(p){const type=p.main||'A';const sub=p.sub||'I';shell(`<section class="resultPage gatePage referenceStyleResult"><div class="resultTop"><span>診断結果</span><span class="gateShare">⌯</span></div><div class="polishedHero">${resultCharacter(type,sub)}</div><button class="lineCard" id="line"><span class="lineLogo">LINE</span><span><b>LINEで友だち追加して</b><br><strong>詳しい結果を受け取る</strong></span><i>›</i></button><div class="benefits"><div>TOP5<span>あなたに合った<br>副業</span></div><div>ROADMAP<span>具体的な始め方<br>ロードマップ</span></div><div>LEARN<span>おすすめの<br>学習リソース</span></div></div><button class="homeBtn" id="home">トップに戻る</button>${location.hostname==='localhost'||location.hostname==='127.0.0.1'?'<button class="btn secondary" id="dev">開発テスト：LINE登録済みにする</button>':''}</section>`);document.getElementById('line').onclick=()=>{track('line_click');location.href='/auth/line?diagnosis_id='+encodeURIComponent(did)};const home=document.getElementById('home');if(home)home.onclick=()=>{location.href='/'};const dev=document.getElementById('dev');if(dev)dev.onclick=async()=>{try{await api('/api/dev/verify-line',{method:'POST',body:JSON.stringify({diagnosis_id:did})});loadResult()}catch(e){showErr(e)}}}
 async function loadResult(){try{const d=await api('/api/result?diagnosis_id='+encodeURIComponent(did));if(d.locked)return renderGate({icon:'🔒',type:'結果ロック中',color:'#667085'});result=d.result;track('result_view');renderResult()}catch(e){showErr(e)}}
+function typeNameHtml(name){
+  const base=name.replace(/タイプ$/,'');
+  return escapeHtml(base).replace(/・/g,'・<wbr>')+(base!==name?'<small>タイプ</small>':'');
+}
+const jobIcons={
+  laptop:'<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>',
+  video:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
+  camera:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
+  search:'<circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l6 6"/>',
+  chart:'<path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/>',
+  pen:'<path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/>',
+  doc:'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>',
+  palette:'<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5S14 15 15 15h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',
+  phone:'<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>',
+  teach:'<rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/>',
+  headset:'<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/>',
+  users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14c2.8 0 5 2.2 5 5"/>',
+  link:'<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+  megaphone:'<path d="M3 10v4h4l9 5V5L7 10z"/><path d="M19 9a4 4 0 0 1 0 6"/>',
+  handshake:'<path d="M2 12l4-4 4 2 3-2 4 1 5 3"/><path d="M6 8v6l5 4 2-1 3 2 4-4"/>',
+  trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  clipboard:'<rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 4V2.5h6V4M8.5 11l2 2 4-4M8.5 17h7"/>',
+  calendar:'<rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  keyboard:'<rect x="2" y="6" width="20" height="12" rx="1.5"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>'
+};
+const jobIconOf={
+  'Webサイト制作':'laptop','動画編集':'video','写真・映像撮影':'camera','業務効率化・仕組み作り':'gear',
+  'リサーチ・調査':'search','データ分析':'chart','Webライティング':'pen','資料作成':'doc',
+  'イラスト制作':'pen','デザイン制作':'palette','SNSコンテンツ':'phone','ライティング':'pen',
+  'SNS運用サポート':'phone','オンライン講師':'teach','カスタマーサポート':'headset','コミュニティ運営':'users',
+  'アフィリエイト':'link','SNS発信':'megaphone','営業・企画':'handshake','Webマーケティング':'trend',
+  '事務サポート':'clipboard','スケジュール管理':'calendar','データ入力':'keyboard'
+};
+function jobIcon(job){return `<svg viewBox="0 0 24 24" aria-hidden="true">${jobIcons[jobIconOf[job]]||jobIcons.clipboard}</svg>`}
 function resultCharacter(type,sub){
   const main=typeInfo[type]||typeInfo.A;
   const sec=typeInfo[sub]||typeInfo.I;
-  const mascot=`/assets/dynamic/${type}.webp`;
-  const subMascot=`/assets/dynamic/${sub}.webp`;
-  return `<div class="resultImageWrap resultCharacterV2 dynamicReferenceResult">
-    <div class="dynamicResultHero" style="--main:${main.color};--soft:${main.soft}">
-      <div class="dynamicResultKicker">あなたの副業タイプは…</div>
-      <div class="dynamicResultColumns">
-        <div class="dynamicResultCopy">
-          <div class="dynamicResultMain"><div class="dynamicTypeBadge">${type}</div><div><div class="dynamicTypeName">${escapeHtml(main.name)}</div><div class="dynamicTypeEn">(${escapeHtml(main.en)})</div></div></div>
-          <div class="dynamicAction">${escapeHtml(main.action)}</div>
-          <div class="dynamicPhrase">${escapeHtml(main.phrase)}</div>
-          <div class="dynamicDescription">${escapeHtml(main.desc||'あなたの興味や行動傾向を活かしやすいタイプです。')}</div>
-        </div>
-        <div class="dynamicHumanStage">
-          <img class="dynamicHuman" src="/assets/dynamic/human.webp" alt="診断キャラクター">
-          <div class="mainBuddyOnHands"><img class="dynamicMascot mainMascot" src="${mascot}" alt="${escapeHtml(main.name)}の相棒キャラクター"></div>
-          <div class="subBuddyOnShoulder"><img class="dynamicMascot subMascot" src="${subMascot}" alt="${escapeHtml(sec.name)}の相棒キャラクター"></div>
-        </div>
+  return `<div class="rv3" style="--main:${main.color};--soft:${main.soft};--sub:${sec.color};--subsoft:${sec.soft}">
+    <div class="rv3Hero">
+      <div class="rv3Copy">
+        <div class="rv3Kicker">あなたの副業タイプは…</div>
+        <div class="rv3Type"><div class="rv3Badge">${type}</div><div class="rv3TypeText"><div class="rv3TypeName">${typeNameHtml(main.name)}</div><div class="rv3TypeEn">(${escapeHtml(main.en)})</div></div></div>
+        <div class="rv3Action"><span>${escapeHtml(main.action)}</span></div>
+        <div class="rv3Phrase">${escapeHtml(main.phrase)}</div>
+        <p class="rv3Desc">${escapeHtml(main.desc||'あなたの興味や行動傾向を活かしやすいタイプです。')}</p>
       </div>
-      <div class="dynamicJobs"><div class="dynamicJobsTitle">こんな副業・仕事が向いています</div>${main.jobs.map(j=>`<div class="dynamicJob"><b>${escapeHtml(j)}</b><span>${escapeHtml(jobHint(j))}</span></div>`).join('')}</div>
-      <div class="dynamicSubtype" style="--sub:${sec.color};--subsoft:${sec.soft}">
-        <div class="dynamicSubtypeTitle">あなたのサブタイプは…</div>
-        <div class="dynamicSubtypeBody">
-          <div class="dynamicSubtypeBadge">${sub}</div>
-          <div class="dynamicSubtypeName"><b>${escapeHtml(sec.name)}</b><small>(${escapeHtml(sec.en)})</small></div>
-          <div class="dynamicSubtypeDivider"></div>
-          <div class="dynamicSubtypeText"><b>${escapeHtml(sec.phrase)}</b><span>${escapeHtml(sec.desc||'')}</span></div>
-        </div>
+      <div class="rv3Stage">
+        <img class="rv3Human" src="/assets/dynamic/human.webp" alt="診断キャラクター">
+        <img class="rv3Buddy rv3BuddyMain" src="/assets/dynamic/${type}.webp" alt="${escapeHtml(main.name)}の相棒キャラクター">
+        <img class="rv3Buddy rv3BuddySub" src="/assets/dynamic/${sub}.webp" alt="${escapeHtml(sec.name)}の相棒キャラクター">
       </div>
+    </div>
+    <div class="rv3JobsTitle"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><span>こんな副業・仕事が向いています</span></div>
+    <div class="rv3Jobs">${main.jobs.map(j=>`<div class="rv3Job"><i class="rv3JobIcon">${jobIcon(j)}</i><div class="rv3JobText"><b>${escapeHtml(j)}</b><span>${escapeHtml(jobHint(j))}</span></div><i class="rv3JobArrow">›</i></div>`).join('')}</div>
+    <div class="rv3Sub">
+      <div class="rv3SubLeft">
+        <div class="rv3SubKicker">あなたのサブタイプは…</div>
+        <div class="rv3SubType"><div class="rv3SubBadge">${sub}</div><div><div class="rv3SubName">${typeNameHtml(sec.name)}</div><div class="rv3SubEn">(${escapeHtml(sec.en)})</div></div></div>
+      </div>
+      <div class="rv3SubRight"><b>${escapeHtml(sec.phrase)}</b><span>${escapeHtml(sec.desc||'')}</span></div>
     </div>
   </div>`;
 }

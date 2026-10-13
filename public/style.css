@@ -422,3 +422,55 @@
   .mainBuddyOnHands{left:62%;top:72%;width:48%;}
   .subBuddyOnShoulder{left:84%;top:27%;width:27%;right:auto;}
 }
+
+/* v21: result page rebuilt on the reference composition (rv3*).
+   Every size is relative to the result card width (cqw), so phones and PC share one layout.
+   To resize the illustration, change only --human-w (and --human-shift to slide it right). */
+.referenceStyleResult .polishedHero{background:transparent;box-shadow:none;border-radius:0}
+.rv3{--human-w:70%;--human-shift:-14%;container-type:inline-size;background:#fbf6ee;border-radius:22px;padding:16px 14px 18px;color:#3b2b22;overflow:hidden}
+.rv3 svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rv3Hero{display:grid;overflow:hidden;margin:0 -14px 0 0}
+.rv3Copy,.rv3Stage{grid-area:1/1}
+.rv3Copy{position:relative;z-index:3;width:57%;padding-bottom:6px}
+.rv3Kicker{font-size:max(13px,4cqw);font-weight:700;color:#5a4a40;letter-spacing:.06em;margin:2px 0 8px}
+.rv3Type{position:relative;display:flex;align-items:center;gap:2.6cqw;width:calc(100% + 6cqw)}
+.rv3Type::before{content:"";position:absolute;left:8cqw;right:0;top:50%;height:calc(100% - 2cqw);transform:translateY(-50%);background:var(--soft);border-radius:0 999px 999px 0;opacity:.9;z-index:-1}
+.rv3Badge{flex:0 0 17cqw;width:17cqw;height:17cqw;border-radius:50%;background:var(--main);color:#fff;display:grid;place-items:center;font-size:10cqw;font-weight:900;line-height:1;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.rv3TypeText{min-width:0;padding:1cqw 0}
+.rv3TypeName{font-size:5.4cqw;font-weight:900;line-height:1.2;color:var(--main);word-break:keep-all;overflow-wrap:anywhere}
+.rv3TypeName small,.rv3SubName small{font-size:.72em;font-weight:800}
+.rv3TypeEn{font-size:max(10px,3.2cqw);color:#6f625a;margin-top:1px}
+.rv3Action{margin-top:3.6cqw;font-size:9.4cqw;font-weight:900;line-height:1.08;letter-spacing:.01em;color:#33241c;white-space:nowrap}
+.rv3Action span{background:linear-gradient(transparent 70%,var(--soft) 70%,var(--soft) 94%,transparent 94%);padding:0 2px}
+.rv3Phrase{display:inline-block;max-width:53cqw;margin-top:3.6cqw;padding:2cqw 3.6cqw;border:2px solid var(--main);border-radius:999px;background:var(--soft);font-size:max(12px,3.7cqw);font-weight:800;line-height:1.4;color:#4b382d}
+.rv3Desc{max-width:49cqw;margin:3.6cqw 0 0;font-size:max(12px,3.5cqw);line-height:1.75;font-weight:600;color:#4d4540}
+.rv3Stage{position:relative;z-index:1;align-self:end;justify-self:end;width:var(--human-w);margin-right:var(--human-shift);aspect-ratio:1024/1270;overflow:hidden}
+.rv3 .rv3Human{position:absolute;left:0;top:0;width:100%;height:auto;display:block}
+.rv3 .rv3Buddy{position:absolute;height:auto;display:block;filter:drop-shadow(0 3px 3px rgba(60,45,35,.15))}
+.rv3 .rv3BuddyMain{width:52%;left:50%;bottom:10%;transform:translateX(-50%);z-index:2}
+.rv3 .rv3BuddySub{width:26%;left:55%;bottom:47%;z-index:3}
+.rv3JobsTitle{display:flex;align-items:center;gap:8px;margin:4px 0 9px;font-size:max(14px,4.5cqw);font-weight:900;color:#33241c}
+.rv3JobsTitle svg{flex:0 0 auto;width:24px;height:24px;color:var(--main)}
+.rv3JobsTitle span{background:linear-gradient(transparent 62%,var(--soft) 62%);padding:0 4px}
+.rv3Jobs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rv3Job{display:flex;align-items:center;gap:5px;background:#fffdf9;border:1px solid #efe2d4;border-radius:14px;padding:10px 6px 10px 7px;min-height:74px}
+.rv3JobIcon{flex:0 0 auto;width:22px;height:22px;color:var(--main)}
+.rv3JobText{flex:1;min-width:0}
+.rv3JobText b{display:block;font-size:max(11.5px,3.4cqw);line-height:1.3;color:#33271f}
+.rv3JobText span{display:block;margin-top:3px;font-size:max(10px,2.9cqw);line-height:1.45;color:#6a6058}
+.rv3JobArrow{flex:0 0 auto;width:17px;height:17px;border-radius:50%;background:var(--soft);color:var(--main);display:grid;place-items:center;font-style:normal;font-weight:900;font-size:13px;line-height:1}
+.rv3Sub{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;margin-top:14px;background:var(--subsoft);border-radius:18px;padding:12px 13px 14px}
+.rv3SubLeft{padding-right:12px;border-right:1px solid color-mix(in srgb,var(--sub) 35%,transparent)}
+.rv3SubKicker{font-size:max(11px,3.2cqw);font-weight:700;color:#55605a;margin-bottom:7px}
+.rv3SubType{display:flex;align-items:center;gap:8px}
+.rv3SubBadge{flex:0 0 auto;width:12cqw;height:12cqw;min-width:40px;min-height:40px;border-radius:50%;background:var(--sub);color:#fff;display:grid;place-items:center;font-size:max(22px,7cqw);font-weight:900}
+.rv3SubName{font-size:max(13px,4cqw);font-weight:900;line-height:1.25;color:#33271f;word-break:keep-all;overflow-wrap:anywhere}
+.rv3SubEn{font-size:max(9px,2.7cqw);color:#646a64;margin-top:1px}
+.rv3SubRight b{display:inline-block;background:rgba(255,255,255,.6);border-radius:999px;padding:5px 10px;font-size:max(11px,3.3cqw);color:#3d4a41}
+.rv3SubRight span{display:block;margin-top:6px;font-size:max(10.5px,3.1cqw);line-height:1.6;color:#4f5952}
+@container (min-width:460px){
+  .rv3{padding:22px 22px 24px}
+  .rv3Hero{margin-right:-22px}
+  .rv3Copy{width:55%}
+  .rv3Job{padding:12px 10px}
+}
