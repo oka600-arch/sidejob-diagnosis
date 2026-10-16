@@ -47,6 +47,20 @@ LINE Loginを実際に確認するには、RenderのEnvironment Variablesに以�
 
 LINE Developers側のCallback URLにも同じRedirect URIを登録する。
 
+## 6. 画面をStatic Siteで配信する（黒い起動画面を出さない）
+画面（public/）はスリープしない無料Static Siteで配信し、診断処理だけ今のWeb Service（https://sidejob-diagnosis-5.onrender.com）に残す。
+画面を開いた瞬間にAPIの起動を始め、「診断をはじめる」を押したときにまだ起動中なら「診断を準備しています…」と表示して待つ。
+
+1. Render → New → Static Site → このリポジトリを選択
+2. Build Command: `node scripts/build-static.js`
+3. Publish Directory: `dist`
+4. Environment Variables: `API_BASE=https://sidejob-diagnosis-5.onrender.com`
+5. Create Static Site → 発行されたURL（例 `https://sidejob-diagnosis-front.onrender.com`）を控える
+6. 既存のWeb ServiceのEnvironmentに `FRONTEND_URL=<Static SiteのURL>` を追加して保存（CORS許可とLINEログイン後の戻り先に使う）
+7. 今後お客さんに案内するのはStatic SiteのURL。LINE_REDIRECT_URIとLINE DevelopersのCallback URLはWeb ServiceのURLのままでよい
+
+`FRONTEND_URL` 以外のドメイン（独自ドメインなど）からも使う場合は `ALLOWED_ORIGINS` にカンマ区切りで追加する。
+
 ## 注意
 - Free Web Serviceは15分アクセスがないと停止し、次回アクセス時の起動に約1分かかる場合がある。
 - ローカルJSONストレージはFree Web Serviceの再起動・再デプロイで永続保証されない。テスト用途として使い、本番ではPostgreSQL等へ移行する。
