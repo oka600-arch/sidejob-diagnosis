@@ -21,3 +21,16 @@ services:
         sync: false
       - key: ADMIN_TOKEN
         sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+  # 診断画面（スリープしない無料Static Site）
+  - type: web
+    name: sidejob-diagnosis-front
+    runtime: static
+    buildCommand: node scripts/build-static.js
+    staticPublishPath: ./dist
+    envVars:
+      - key: API_BASE
+        value: https://sidejob-diagnosis-5.onrender.com
