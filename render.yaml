@@ -36,4 +36,4 @@ services:
         value: https://sidejob-diagnosis-5.onrender.com
       # Googleアナリティクスの測定ID（GA4 管理 > データストリーム で確認）
       - key: GA_MEASUREMENT_ID
-        value: G-Q6257525RV
+        value: G-330W5VMPWR
