@@ -4,5 +4,7 @@ const ROOT=path.join(__dirname,'..'),SRC=path.join(ROOT,'public'),OUT=path.join(
 const apiBase=(process.env.API_BASE||'https://sidejob-diagnosis-5.onrender.com').replace(/\/$/,'');
 fs.rmSync(OUT,{recursive:true,force:true});
 fs.cpSync(SRC,OUT,{recursive:true,filter:p=>!/\.bak/.test(p)});
-fs.writeFileSync(path.join(OUT,'config.js'),`window.SIDEJOB_API_BASE=${JSON.stringify(apiBase)};\n`);
-console.log('static site built to dist/ with API_BASE='+apiBase);
+const gaRaw=(process.env.GA_MEASUREMENT_ID||'G-Q6257525RV').trim();
+const gaId=/^G-[A-Z0-9]+$/.test(gaRaw)&&!/XXXX/.test(gaRaw)?gaRaw:''; // 仮のIDのままなら計測しない
+fs.writeFileSync(path.join(OUT,'config.js'),`window.SIDEJOB_API_BASE=${JSON.stringify(apiBase)};\nwindow.SIDEJOB_GA_ID=${JSON.stringify(gaId)};\n`);
+console.log('static site built to dist/ with API_BASE='+apiBase+(gaId?' GA='+gaId:' (GA off)'));
